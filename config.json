@@ -1,0 +1,41 @@
+{
+    "app_state_path": "app_state.json",
+    "audio": {
+        "sample_rate": 44100,
+        "buffer_size": 4096
+    },
+    "pitch_detection": {
+        "algorithm": "yin",
+        "confidence_threshold": 0.80,
+        "silence_threshold_hz": 60.0,
+        "pitch_tolerance": 0.8
+    },
+    "stability": {
+        "required_consecutive_frames": 3
+    },
+    "deck": {
+        "tuning": "EADGBE",
+        "strings": [6, 5, 4, 3, 2, 1],
+        "min_fret": 0,
+        "max_fret": 12,
+        "notes_to_learn": [
+            "C", "C#", "D", "D#", "E", "F",
+            "F#", "G", "G#", "A", "A#", "B"
+        ]
+    },
+    "srs": {
+        "progress_path": "progress.json",
+        "desired_retention": 0.9,
+        "learning_steps_minutes": [1, 10],
+        "relearning_steps_minutes": [10],
+        "maximum_interval_days": 36500,
+        "enable_fuzzing": true,
+        "initial_new_cards": 3,
+        "new_card_interval_sec": 45.0,
+        "random_candidate_window": 8,
+        "easy_threshold_sec": 2.0,
+        "hard_threshold_sec": 6.0,
+        "wrong_repeat_cooldown_sec": 1.5,
+        "success_pause_sec": 0.8
+    }
+}

@@ -1,0 +1,9 @@
+{
+  "audio_device": {
+    "index": 4,
+    "name": "default",
+    "channels": 64,
+    "default_sr": 44100,
+    "saved_at": "2026-07-09T14:19:20.278210+00:00"
+  }
+}

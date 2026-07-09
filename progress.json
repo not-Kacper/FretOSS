@@ -1,0 +1,2927 @@
+{
+  "version": 1,
+  "created_at": "2026-07-09T13:52:45.204155+00:00",
+  "updated_at": "2026-07-09T14:20:22.750924+00:00",
+  "scheduler": {
+    "parameters": [
+      0.212,
+      1.2931,
+      2.3065,
+      8.2956,
+      6.4133,
+      0.8334,
+      3.0194,
+      0.001,
+      1.8722,
+      0.1666,
+      0.796,
+      1.4835,
+      0.0614,
+      0.2629,
+      1.6483,
+      0.6014,
+      1.8729,
+      0.5425,
+      0.0912,
+      0.0658,
+      0.1542
+    ],
+    "desired_retention": 0.9,
+    "learning_steps": [
+      60,
+      600
+    ],
+    "relearning_steps": [
+      600
+    ],
+    "maximum_interval": 36500,
+    "enable_fuzzing": true
+  },
+  "cards": {
+    "s6_f00": {
+      "target": {
+        "key": "s6_f00",
+        "card_id": 6000,
+        "string": 6,
+        "string_label": "low E",
+        "fret": 0,
+        "midi_note": 40,
+        "note_name": "E2",
+        "pitch_class": "E"
+      },
+      "card": {
+        "card_id": 6000,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s6_f01": {
+      "target": {
+        "key": "s6_f01",
+        "card_id": 6001,
+        "string": 6,
+        "string_label": "low E",
+        "fret": 1,
+        "midi_note": 41,
+        "note_name": "F2",
+        "pitch_class": "F"
+      },
+      "card": {
+        "card_id": 6001,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s6_f02": {
+      "target": {
+        "key": "s6_f02",
+        "card_id": 6002,
+        "string": 6,
+        "string_label": "low E",
+        "fret": 2,
+        "midi_note": 42,
+        "note_name": "F#2",
+        "pitch_class": "F#"
+      },
+      "card": {
+        "card_id": 6002,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s6_f03": {
+      "target": {
+        "key": "s6_f03",
+        "card_id": 6003,
+        "string": 6,
+        "string_label": "low E",
+        "fret": 3,
+        "midi_note": 43,
+        "note_name": "G2",
+        "pitch_class": "G"
+      },
+      "card": {
+        "card_id": 6003,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s6_f04": {
+      "target": {
+        "key": "s6_f04",
+        "card_id": 6004,
+        "string": 6,
+        "string_label": "low E",
+        "fret": 4,
+        "midi_note": 44,
+        "note_name": "G#2",
+        "pitch_class": "G#"
+      },
+      "card": {
+        "card_id": 6004,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s6_f05": {
+      "target": {
+        "key": "s6_f05",
+        "card_id": 6005,
+        "string": 6,
+        "string_label": "low E",
+        "fret": 5,
+        "midi_note": 45,
+        "note_name": "A2",
+        "pitch_class": "A"
+      },
+      "card": {
+        "card_id": 6005,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s6_f06": {
+      "target": {
+        "key": "s6_f06",
+        "card_id": 6006,
+        "string": 6,
+        "string_label": "low E",
+        "fret": 6,
+        "midi_note": 46,
+        "note_name": "A#2",
+        "pitch_class": "A#"
+      },
+      "card": {
+        "card_id": 6006,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s6_f07": {
+      "target": {
+        "key": "s6_f07",
+        "card_id": 6007,
+        "string": 6,
+        "string_label": "low E",
+        "fret": 7,
+        "midi_note": 47,
+        "note_name": "B2",
+        "pitch_class": "B"
+      },
+      "card": {
+        "card_id": 6007,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s6_f08": {
+      "target": {
+        "key": "s6_f08",
+        "card_id": 6008,
+        "string": 6,
+        "string_label": "low E",
+        "fret": 8,
+        "midi_note": 48,
+        "note_name": "C3",
+        "pitch_class": "C"
+      },
+      "card": {
+        "card_id": 6008,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s6_f09": {
+      "target": {
+        "key": "s6_f09",
+        "card_id": 6009,
+        "string": 6,
+        "string_label": "low E",
+        "fret": 9,
+        "midi_note": 49,
+        "note_name": "C#3",
+        "pitch_class": "C#"
+      },
+      "card": {
+        "card_id": 6009,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s6_f10": {
+      "target": {
+        "key": "s6_f10",
+        "card_id": 6010,
+        "string": 6,
+        "string_label": "low E",
+        "fret": 10,
+        "midi_note": 50,
+        "note_name": "D3",
+        "pitch_class": "D"
+      },
+      "card": {
+        "card_id": 6010,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s6_f11": {
+      "target": {
+        "key": "s6_f11",
+        "card_id": 6011,
+        "string": 6,
+        "string_label": "low E",
+        "fret": 11,
+        "midi_note": 51,
+        "note_name": "D#3",
+        "pitch_class": "D#"
+      },
+      "card": {
+        "card_id": 6011,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s6_f12": {
+      "target": {
+        "key": "s6_f12",
+        "card_id": 6012,
+        "string": 6,
+        "string_label": "low E",
+        "fret": 12,
+        "midi_note": 52,
+        "note_name": "E3",
+        "pitch_class": "E"
+      },
+      "card": {
+        "card_id": 6012,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s5_f00": {
+      "target": {
+        "key": "s5_f00",
+        "card_id": 5000,
+        "string": 5,
+        "string_label": "A",
+        "fret": 0,
+        "midi_note": 45,
+        "note_name": "A2",
+        "pitch_class": "A"
+      },
+      "card": {
+        "card_id": 5000,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s5_f01": {
+      "target": {
+        "key": "s5_f01",
+        "card_id": 5001,
+        "string": 5,
+        "string_label": "A",
+        "fret": 1,
+        "midi_note": 46,
+        "note_name": "A#2",
+        "pitch_class": "A#"
+      },
+      "card": {
+        "card_id": 5001,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s5_f02": {
+      "target": {
+        "key": "s5_f02",
+        "card_id": 5002,
+        "string": 5,
+        "string_label": "A",
+        "fret": 2,
+        "midi_note": 47,
+        "note_name": "B2",
+        "pitch_class": "B"
+      },
+      "card": {
+        "card_id": 5002,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s5_f03": {
+      "target": {
+        "key": "s5_f03",
+        "card_id": 5003,
+        "string": 5,
+        "string_label": "A",
+        "fret": 3,
+        "midi_note": 48,
+        "note_name": "C3",
+        "pitch_class": "C"
+      },
+      "card": {
+        "card_id": 5003,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s5_f04": {
+      "target": {
+        "key": "s5_f04",
+        "card_id": 5004,
+        "string": 5,
+        "string_label": "A",
+        "fret": 4,
+        "midi_note": 49,
+        "note_name": "C#3",
+        "pitch_class": "C#"
+      },
+      "card": {
+        "card_id": 5004,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s5_f05": {
+      "target": {
+        "key": "s5_f05",
+        "card_id": 5005,
+        "string": 5,
+        "string_label": "A",
+        "fret": 5,
+        "midi_note": 50,
+        "note_name": "D3",
+        "pitch_class": "D"
+      },
+      "card": {
+        "card_id": 5005,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s5_f06": {
+      "target": {
+        "key": "s5_f06",
+        "card_id": 5006,
+        "string": 5,
+        "string_label": "A",
+        "fret": 6,
+        "midi_note": 51,
+        "note_name": "D#3",
+        "pitch_class": "D#"
+      },
+      "card": {
+        "card_id": 5006,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s5_f07": {
+      "target": {
+        "key": "s5_f07",
+        "card_id": 5007,
+        "string": 5,
+        "string_label": "A",
+        "fret": 7,
+        "midi_note": 52,
+        "note_name": "E3",
+        "pitch_class": "E"
+      },
+      "card": {
+        "card_id": 5007,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s5_f08": {
+      "target": {
+        "key": "s5_f08",
+        "card_id": 5008,
+        "string": 5,
+        "string_label": "A",
+        "fret": 8,
+        "midi_note": 53,
+        "note_name": "F3",
+        "pitch_class": "F"
+      },
+      "card": {
+        "card_id": 5008,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s5_f09": {
+      "target": {
+        "key": "s5_f09",
+        "card_id": 5009,
+        "string": 5,
+        "string_label": "A",
+        "fret": 9,
+        "midi_note": 54,
+        "note_name": "F#3",
+        "pitch_class": "F#"
+      },
+      "card": {
+        "card_id": 5009,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s5_f10": {
+      "target": {
+        "key": "s5_f10",
+        "card_id": 5010,
+        "string": 5,
+        "string_label": "A",
+        "fret": 10,
+        "midi_note": 55,
+        "note_name": "G3",
+        "pitch_class": "G"
+      },
+      "card": {
+        "card_id": 5010,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s5_f11": {
+      "target": {
+        "key": "s5_f11",
+        "card_id": 5011,
+        "string": 5,
+        "string_label": "A",
+        "fret": 11,
+        "midi_note": 56,
+        "note_name": "G#3",
+        "pitch_class": "G#"
+      },
+      "card": {
+        "card_id": 5011,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s5_f12": {
+      "target": {
+        "key": "s5_f12",
+        "card_id": 5012,
+        "string": 5,
+        "string_label": "A",
+        "fret": 12,
+        "midi_note": 57,
+        "note_name": "A3",
+        "pitch_class": "A"
+      },
+      "card": {
+        "card_id": 5012,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s4_f00": {
+      "target": {
+        "key": "s4_f00",
+        "card_id": 4000,
+        "string": 4,
+        "string_label": "D",
+        "fret": 0,
+        "midi_note": 50,
+        "note_name": "D3",
+        "pitch_class": "D"
+      },
+      "card": {
+        "card_id": 4000,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s4_f01": {
+      "target": {
+        "key": "s4_f01",
+        "card_id": 4001,
+        "string": 4,
+        "string_label": "D",
+        "fret": 1,
+        "midi_note": 51,
+        "note_name": "D#3",
+        "pitch_class": "D#"
+      },
+      "card": {
+        "card_id": 4001,
+        "state": 1,
+        "step": 0,
+        "stability": 0.001,
+        "difficulty": 9.977990039156355,
+        "due": "2026-07-09T14:10:47.145615+00:00",
+        "last_review": "2026-07-09T14:09:47.145615+00:00"
+      },
+      "points": -13,
+      "attempts": 13,
+      "correct": 0,
+      "wrong": 13,
+      "prompt_count": 1,
+      "last_prompted_at": "2026-07-09T14:07:37.740694+00:00",
+      "last_reviewed_at": "2026-07-09T14:09:47.145615+00:00",
+      "reviews": [
+        {
+          "card_id": 4001,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:07:37.832891+00:00",
+          "review_duration": 89,
+          "target_key": "s4_f01",
+          "detected_midi_note": 62,
+          "detected_note_name": "D4"
+        },
+        {
+          "card_id": 4001,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:07:42.152857+00:00",
+          "review_duration": 4409,
+          "target_key": "s4_f01",
+          "detected_midi_note": 63,
+          "detected_note_name": "D#4"
+        },
+        {
+          "card_id": 4001,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:07:44.072873+00:00",
+          "review_duration": 6329,
+          "target_key": "s4_f01",
+          "detected_midi_note": 63,
+          "detected_note_name": "D#4"
+        },
+        {
+          "card_id": 4001,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:07:55.112882+00:00",
+          "review_duration": 17369,
+          "target_key": "s4_f01",
+          "detected_midi_note": 54,
+          "detected_note_name": "F#3"
+        },
+        {
+          "card_id": 4001,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:07:56.841348+00:00",
+          "review_duration": 19097,
+          "target_key": "s4_f01",
+          "detected_midi_note": 54,
+          "detected_note_name": "F#3"
+        },
+        {
+          "card_id": 4001,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:07:58.953115+00:00",
+          "review_duration": 21209,
+          "target_key": "s4_f01",
+          "detected_midi_note": 55,
+          "detected_note_name": "G3"
+        },
+        {
+          "card_id": 4001,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:08:00.393310+00:00",
+          "review_duration": 22649,
+          "target_key": "s4_f01",
+          "detected_midi_note": 56,
+          "detected_note_name": "G#3"
+        },
+        {
+          "card_id": 4001,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:08:02.216750+00:00",
+          "review_duration": 24472,
+          "target_key": "s4_f01",
+          "detected_midi_note": 71,
+          "detected_note_name": "B4"
+        },
+        {
+          "card_id": 4001,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:09:14.313706+00:00",
+          "review_duration": 96569,
+          "target_key": "s4_f01",
+          "detected_midi_note": 44,
+          "detected_note_name": "G#2"
+        },
+        {
+          "card_id": 4001,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:09:26.505616+00:00",
+          "review_duration": 108761,
+          "target_key": "s4_f01",
+          "detected_midi_note": 46,
+          "detected_note_name": "A#2"
+        },
+        {
+          "card_id": 4001,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:09:38.793401+00:00",
+          "review_duration": 121049,
+          "target_key": "s4_f01",
+          "detected_midi_note": 47,
+          "detected_note_name": "B2"
+        },
+        {
+          "card_id": 4001,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:09:45.513099+00:00",
+          "review_duration": 127769,
+          "target_key": "s4_f01",
+          "detected_midi_note": 67,
+          "detected_note_name": "G4"
+        },
+        {
+          "card_id": 4001,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:09:47.145615+00:00",
+          "review_duration": 129401,
+          "target_key": "s4_f01",
+          "detected_midi_note": 46,
+          "detected_note_name": "A#2"
+        }
+      ]
+    },
+    "s4_f02": {
+      "target": {
+        "key": "s4_f02",
+        "card_id": 4002,
+        "string": 4,
+        "string_label": "D",
+        "fret": 2,
+        "midi_note": 52,
+        "note_name": "E3",
+        "pitch_class": "E"
+      },
+      "card": {
+        "card_id": 4002,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s4_f03": {
+      "target": {
+        "key": "s4_f03",
+        "card_id": 4003,
+        "string": 4,
+        "string_label": "D",
+        "fret": 3,
+        "midi_note": 53,
+        "note_name": "F3",
+        "pitch_class": "F"
+      },
+      "card": {
+        "card_id": 4003,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s4_f04": {
+      "target": {
+        "key": "s4_f04",
+        "card_id": 4004,
+        "string": 4,
+        "string_label": "D",
+        "fret": 4,
+        "midi_note": 54,
+        "note_name": "F#3",
+        "pitch_class": "F#"
+      },
+      "card": {
+        "card_id": 4004,
+        "state": 1,
+        "step": 0,
+        "stability": 0.001,
+        "difficulty": 9.970298479479803,
+        "due": "2026-07-09T14:11:54.584877+00:00",
+        "last_review": "2026-07-09T14:06:24.584877+00:00"
+      },
+      "points": -8,
+      "attempts": 10,
+      "correct": 1,
+      "wrong": 9,
+      "prompt_count": 2,
+      "last_prompted_at": "2026-07-09T14:06:05.869082+00:00",
+      "last_reviewed_at": "2026-07-09T14:06:24.584877+00:00",
+      "reviews": [
+        {
+          "card_id": 4004,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:03:59.635229+00:00",
+          "review_duration": 91,
+          "target_key": "s4_f04",
+          "detected_midi_note": 68,
+          "detected_note_name": "G#4"
+        },
+        {
+          "card_id": 4004,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:04:01.555156+00:00",
+          "review_duration": 2011,
+          "target_key": "s4_f04",
+          "detected_midi_note": 70,
+          "detected_note_name": "A#4"
+        },
+        {
+          "card_id": 4004,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:04:03.091214+00:00",
+          "review_duration": 3547,
+          "target_key": "s4_f04",
+          "detected_midi_note": 70,
+          "detected_note_name": "A#4"
+        },
+        {
+          "card_id": 4004,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:04:04.435100+00:00",
+          "review_duration": 4890,
+          "target_key": "s4_f04",
+          "detected_midi_note": 67,
+          "detected_note_name": "G4"
+        },
+        {
+          "card_id": 4004,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:06:05.960745+00:00",
+          "review_duration": 88,
+          "target_key": "s4_f04",
+          "detected_midi_note": 61,
+          "detected_note_name": "C#4"
+        },
+        {
+          "card_id": 4004,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:06:15.752842+00:00",
+          "review_duration": 9880,
+          "target_key": "s4_f04",
+          "detected_midi_note": 56,
+          "detected_note_name": "G#3"
+        },
+        {
+          "card_id": 4004,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:06:17.384681+00:00",
+          "review_duration": 11512,
+          "target_key": "s4_f04",
+          "detected_midi_note": 53,
+          "detected_note_name": "F3"
+        },
+        {
+          "card_id": 4004,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:06:19.016609+00:00",
+          "review_duration": 13144,
+          "target_key": "s4_f04",
+          "detected_midi_note": 53,
+          "detected_note_name": "F3"
+        },
+        {
+          "card_id": 4004,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:06:23.432862+00:00",
+          "review_duration": 17560,
+          "target_key": "s4_f04",
+          "detected_midi_note": 55,
+          "detected_note_name": "G3"
+        },
+        {
+          "card_id": 4004,
+          "rating": 2,
+          "review_datetime": "2026-07-09T14:06:24.584877+00:00",
+          "review_duration": 18712,
+          "target_key": "s4_f04",
+          "detected_midi_note": 54,
+          "detected_note_name": "F#3"
+        }
+      ]
+    },
+    "s4_f05": {
+      "target": {
+        "key": "s4_f05",
+        "card_id": 4005,
+        "string": 4,
+        "string_label": "D",
+        "fret": 5,
+        "midi_note": 55,
+        "note_name": "G3",
+        "pitch_class": "G"
+      },
+      "card": {
+        "card_id": 4005,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s4_f06": {
+      "target": {
+        "key": "s4_f06",
+        "card_id": 4006,
+        "string": 4,
+        "string_label": "D",
+        "fret": 6,
+        "midi_note": 56,
+        "note_name": "G#3",
+        "pitch_class": "G#"
+      },
+      "card": {
+        "card_id": 4006,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s4_f07": {
+      "target": {
+        "key": "s4_f07",
+        "card_id": 4007,
+        "string": 4,
+        "string_label": "D",
+        "fret": 7,
+        "midi_note": 57,
+        "note_name": "A3",
+        "pitch_class": "A"
+      },
+      "card": {
+        "card_id": 4007,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s4_f08": {
+      "target": {
+        "key": "s4_f08",
+        "card_id": 4008,
+        "string": 4,
+        "string_label": "D",
+        "fret": 8,
+        "midi_note": 58,
+        "note_name": "A#3",
+        "pitch_class": "A#"
+      },
+      "card": {
+        "card_id": 4008,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s4_f09": {
+      "target": {
+        "key": "s4_f09",
+        "card_id": 4009,
+        "string": 4,
+        "string_label": "D",
+        "fret": 9,
+        "midi_note": 59,
+        "note_name": "B3",
+        "pitch_class": "B"
+      },
+      "card": {
+        "card_id": 4009,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s4_f10": {
+      "target": {
+        "key": "s4_f10",
+        "card_id": 4010,
+        "string": 4,
+        "string_label": "D",
+        "fret": 10,
+        "midi_note": 60,
+        "note_name": "C4",
+        "pitch_class": "C"
+      },
+      "card": {
+        "card_id": 4010,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s4_f11": {
+      "target": {
+        "key": "s4_f11",
+        "card_id": 4011,
+        "string": 4,
+        "string_label": "D",
+        "fret": 11,
+        "midi_note": 61,
+        "note_name": "C#4",
+        "pitch_class": "C#"
+      },
+      "card": {
+        "card_id": 4011,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s4_f12": {
+      "target": {
+        "key": "s4_f12",
+        "card_id": 4012,
+        "string": 4,
+        "string_label": "D",
+        "fret": 12,
+        "midi_note": 62,
+        "note_name": "D4",
+        "pitch_class": "D"
+      },
+      "card": {
+        "card_id": 4012,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s3_f00": {
+      "target": {
+        "key": "s3_f00",
+        "card_id": 3000,
+        "string": 3,
+        "string_label": "G",
+        "fret": 0,
+        "midi_note": 55,
+        "note_name": "G3",
+        "pitch_class": "G"
+      },
+      "card": {
+        "card_id": 3000,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s3_f01": {
+      "target": {
+        "key": "s3_f01",
+        "card_id": 3001,
+        "string": 3,
+        "string_label": "G",
+        "fret": 1,
+        "midi_note": 56,
+        "note_name": "G#3",
+        "pitch_class": "G#"
+      },
+      "card": {
+        "card_id": 3001,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s3_f02": {
+      "target": {
+        "key": "s3_f02",
+        "card_id": 3002,
+        "string": 3,
+        "string_label": "G",
+        "fret": 2,
+        "midi_note": 57,
+        "note_name": "A3",
+        "pitch_class": "A"
+      },
+      "card": {
+        "card_id": 3002,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s3_f03": {
+      "target": {
+        "key": "s3_f03",
+        "card_id": 3003,
+        "string": 3,
+        "string_label": "G",
+        "fret": 3,
+        "midi_note": 58,
+        "note_name": "A#3",
+        "pitch_class": "A#"
+      },
+      "card": {
+        "card_id": 3003,
+        "state": 1,
+        "step": 0,
+        "stability": 0.14339874769184835,
+        "difficulty": 7.604209769076838,
+        "due": "2026-07-09T14:12:33.016947+00:00",
+        "last_review": "2026-07-09T14:07:03.016947+00:00"
+      },
+      "points": 0,
+      "attempts": 2,
+      "correct": 1,
+      "wrong": 1,
+      "prompt_count": 1,
+      "last_prompted_at": "2026-07-09T14:06:25.388106+00:00",
+      "last_reviewed_at": "2026-07-09T14:07:03.016947+00:00",
+      "reviews": [
+        {
+          "card_id": 3003,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:06:25.481079+00:00",
+          "review_duration": 90,
+          "target_key": "s3_f03",
+          "detected_midi_note": 54,
+          "detected_note_name": "F#3"
+        },
+        {
+          "card_id": 3003,
+          "rating": 2,
+          "review_datetime": "2026-07-09T14:07:03.016947+00:00",
+          "review_duration": 37626,
+          "target_key": "s3_f03",
+          "detected_midi_note": 58,
+          "detected_note_name": "A#3"
+        }
+      ]
+    },
+    "s3_f04": {
+      "target": {
+        "key": "s3_f04",
+        "card_id": 3004,
+        "string": 3,
+        "string_label": "G",
+        "fret": 4,
+        "midi_note": 59,
+        "note_name": "B3",
+        "pitch_class": "B"
+      },
+      "card": {
+        "card_id": 3004,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s3_f05": {
+      "target": {
+        "key": "s3_f05",
+        "card_id": 3005,
+        "string": 3,
+        "string_label": "G",
+        "fret": 5,
+        "midi_note": 60,
+        "note_name": "C4",
+        "pitch_class": "C"
+      },
+      "card": {
+        "card_id": 3005,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s3_f06": {
+      "target": {
+        "key": "s3_f06",
+        "card_id": 3006,
+        "string": 3,
+        "string_label": "G",
+        "fret": 6,
+        "midi_note": 61,
+        "note_name": "C#4",
+        "pitch_class": "C#"
+      },
+      "card": {
+        "card_id": 3006,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s3_f07": {
+      "target": {
+        "key": "s3_f07",
+        "card_id": 3007,
+        "string": 3,
+        "string_label": "G",
+        "fret": 7,
+        "midi_note": 62,
+        "note_name": "D4",
+        "pitch_class": "D"
+      },
+      "card": {
+        "card_id": 3007,
+        "state": 1,
+        "step": 0,
+        "stability": 0.001,
+        "difficulty": 9.9776702357515,
+        "due": "2026-07-09T14:21:22.750802+00:00",
+        "last_review": "2026-07-09T14:20:22.750802+00:00"
+      },
+      "points": -8,
+      "attempts": 10,
+      "correct": 1,
+      "wrong": 9,
+      "prompt_count": 2,
+      "last_prompted_at": "2026-07-09T14:20:05.379719+00:00",
+      "last_reviewed_at": "2026-07-09T14:20:22.750802+00:00",
+      "reviews": [
+        {
+          "card_id": 3007,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:07:03.912929+00:00",
+          "review_duration": 90,
+          "target_key": "s3_f07",
+          "detected_midi_note": 58,
+          "detected_note_name": "A#3"
+        },
+        {
+          "card_id": 3007,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:07:33.960903+00:00",
+          "review_duration": 30138,
+          "target_key": "s3_f07",
+          "detected_midi_note": 63,
+          "detected_note_name": "D#4"
+        },
+        {
+          "card_id": 3007,
+          "rating": 2,
+          "review_datetime": "2026-07-09T14:07:36.936876+00:00",
+          "review_duration": 33114,
+          "target_key": "s3_f07",
+          "detected_midi_note": 62,
+          "detected_note_name": "D4"
+        },
+        {
+          "card_id": 3007,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:20:05.470615+00:00",
+          "review_duration": 87,
+          "target_key": "s3_f07",
+          "detected_midi_note": 68,
+          "detected_note_name": "G#4"
+        },
+        {
+          "card_id": 3007,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:20:10.462493+00:00",
+          "review_duration": 5079,
+          "target_key": "s3_f07",
+          "detected_midi_note": 69,
+          "detected_note_name": "A4"
+        },
+        {
+          "card_id": 3007,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:20:12.574444+00:00",
+          "review_duration": 7191,
+          "target_key": "s3_f07",
+          "detected_midi_note": 68,
+          "detected_note_name": "G#4"
+        },
+        {
+          "card_id": 3007,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:20:14.494591+00:00",
+          "review_duration": 9111,
+          "target_key": "s3_f07",
+          "detected_midi_note": 70,
+          "detected_note_name": "A#4"
+        },
+        {
+          "card_id": 3007,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:20:20.734895+00:00",
+          "review_duration": 15351,
+          "target_key": "s3_f07",
+          "detected_midi_note": 59,
+          "detected_note_name": "B3"
+        },
+        {
+          "card_id": 3007,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:20:22.078467+00:00",
+          "review_duration": 16695,
+          "target_key": "s3_f07",
+          "detected_midi_note": 61,
+          "detected_note_name": "C#4"
+        },
+        {
+          "card_id": 3007,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:20:22.750802+00:00",
+          "review_duration": 17367,
+          "target_key": "s3_f07",
+          "detected_midi_note": 60,
+          "detected_note_name": "C4"
+        }
+      ]
+    },
+    "s3_f08": {
+      "target": {
+        "key": "s3_f08",
+        "card_id": 3008,
+        "string": 3,
+        "string_label": "G",
+        "fret": 8,
+        "midi_note": 63,
+        "note_name": "D#4",
+        "pitch_class": "D#"
+      },
+      "card": {
+        "card_id": 3008,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s3_f09": {
+      "target": {
+        "key": "s3_f09",
+        "card_id": 3009,
+        "string": 3,
+        "string_label": "G",
+        "fret": 9,
+        "midi_note": 64,
+        "note_name": "E4",
+        "pitch_class": "E"
+      },
+      "card": {
+        "card_id": 3009,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s3_f10": {
+      "target": {
+        "key": "s3_f10",
+        "card_id": 3010,
+        "string": 3,
+        "string_label": "G",
+        "fret": 10,
+        "midi_note": 65,
+        "note_name": "F4",
+        "pitch_class": "F"
+      },
+      "card": {
+        "card_id": 3010,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s3_f11": {
+      "target": {
+        "key": "s3_f11",
+        "card_id": 3011,
+        "string": 3,
+        "string_label": "G",
+        "fret": 11,
+        "midi_note": 66,
+        "note_name": "F#4",
+        "pitch_class": "F#"
+      },
+      "card": {
+        "card_id": 3011,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s3_f12": {
+      "target": {
+        "key": "s3_f12",
+        "card_id": 3012,
+        "string": 3,
+        "string_label": "G",
+        "fret": 12,
+        "midi_note": 67,
+        "note_name": "G4",
+        "pitch_class": "G"
+      },
+      "card": {
+        "card_id": 3012,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s2_f00": {
+      "target": {
+        "key": "s2_f00",
+        "card_id": 2000,
+        "string": 2,
+        "string_label": "B",
+        "fret": 0,
+        "midi_note": 59,
+        "note_name": "B3",
+        "pitch_class": "B"
+      },
+      "card": {
+        "card_id": 2000,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s2_f01": {
+      "target": {
+        "key": "s2_f01",
+        "card_id": 2001,
+        "string": 2,
+        "string_label": "B",
+        "fret": 1,
+        "midi_note": 60,
+        "note_name": "C4",
+        "pitch_class": "C"
+      },
+      "card": {
+        "card_id": 2001,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s2_f02": {
+      "target": {
+        "key": "s2_f02",
+        "card_id": 2002,
+        "string": 2,
+        "string_label": "B",
+        "fret": 2,
+        "midi_note": 61,
+        "note_name": "C#4",
+        "pitch_class": "C#"
+      },
+      "card": {
+        "card_id": 2002,
+        "state": 1,
+        "step": 0,
+        "stability": 0.001,
+        "difficulty": 9.97023300406247,
+        "due": "2026-07-09T14:25:17.294955+00:00",
+        "last_review": "2026-07-09T14:19:47.294955+00:00"
+      },
+      "points": -7,
+      "attempts": 11,
+      "correct": 2,
+      "wrong": 9,
+      "prompt_count": 2,
+      "last_prompted_at": "2026-07-09T14:19:20.878792+00:00",
+      "last_reviewed_at": "2026-07-09T14:19:47.294955+00:00",
+      "reviews": [
+        {
+          "card_id": 2002,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:05:13.896589+00:00",
+          "review_duration": 5082,
+          "target_key": "s2_f02",
+          "detected_midi_note": 63,
+          "detected_note_name": "D#4"
+        },
+        {
+          "card_id": 2002,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:05:38.280582+00:00",
+          "review_duration": 29466,
+          "target_key": "s2_f02",
+          "detected_midi_note": 65,
+          "detected_note_name": "F4"
+        },
+        {
+          "card_id": 2002,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:05:41.544649+00:00",
+          "review_duration": 32730,
+          "target_key": "s2_f02",
+          "detected_midi_note": 63,
+          "detected_note_name": "D#4"
+        },
+        {
+          "card_id": 2002,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:05:43.177209+00:00",
+          "review_duration": 34362,
+          "target_key": "s2_f02",
+          "detected_midi_note": 63,
+          "detected_note_name": "D#4"
+        },
+        {
+          "card_id": 2002,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:05:52.776720+00:00",
+          "review_duration": 43962,
+          "target_key": "s2_f02",
+          "detected_midi_note": 64,
+          "detected_note_name": "E4"
+        },
+        {
+          "card_id": 2002,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:05:56.520620+00:00",
+          "review_duration": 47706,
+          "target_key": "s2_f02",
+          "detected_midi_note": 65,
+          "detected_note_name": "F4"
+        },
+        {
+          "card_id": 2002,
+          "rating": 2,
+          "review_datetime": "2026-07-09T14:06:05.064623+00:00",
+          "review_duration": 56250,
+          "target_key": "s2_f02",
+          "detected_midi_note": 61,
+          "detected_note_name": "C#4"
+        },
+        {
+          "card_id": 2002,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:19:42.878677+00:00",
+          "review_duration": 21978,
+          "target_key": "s2_f02",
+          "detected_midi_note": 63,
+          "detected_note_name": "D#4"
+        },
+        {
+          "card_id": 2002,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:19:44.414550+00:00",
+          "review_duration": 23514,
+          "target_key": "s2_f02",
+          "detected_midi_note": 63,
+          "detected_note_name": "D#4"
+        },
+        {
+          "card_id": 2002,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:19:45.278629+00:00",
+          "review_duration": 24378,
+          "target_key": "s2_f02",
+          "detected_midi_note": 62,
+          "detected_note_name": "D4"
+        },
+        {
+          "card_id": 2002,
+          "rating": 2,
+          "review_datetime": "2026-07-09T14:19:47.294955+00:00",
+          "review_duration": 26394,
+          "target_key": "s2_f02",
+          "detected_midi_note": 61,
+          "detected_note_name": "C#4"
+        }
+      ]
+    },
+    "s2_f03": {
+      "target": {
+        "key": "s2_f03",
+        "card_id": 2003,
+        "string": 2,
+        "string_label": "B",
+        "fret": 3,
+        "midi_note": 62,
+        "note_name": "D4",
+        "pitch_class": "D"
+      },
+      "card": {
+        "card_id": 2003,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s2_f04": {
+      "target": {
+        "key": "s2_f04",
+        "card_id": 2004,
+        "string": 2,
+        "string_label": "B",
+        "fret": 4,
+        "midi_note": 63,
+        "note_name": "D#4",
+        "pitch_class": "D#"
+      },
+      "card": {
+        "card_id": 2004,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s2_f05": {
+      "target": {
+        "key": "s2_f05",
+        "card_id": 2005,
+        "string": 2,
+        "string_label": "B",
+        "fret": 5,
+        "midi_note": 64,
+        "note_name": "E4",
+        "pitch_class": "E"
+      },
+      "card": {
+        "card_id": 2005,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s2_f06": {
+      "target": {
+        "key": "s2_f06",
+        "card_id": 2006,
+        "string": 2,
+        "string_label": "B",
+        "fret": 6,
+        "midi_note": 65,
+        "note_name": "F4",
+        "pitch_class": "F"
+      },
+      "card": {
+        "card_id": 2006,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s2_f07": {
+      "target": {
+        "key": "s2_f07",
+        "card_id": 2007,
+        "string": 2,
+        "string_label": "B",
+        "fret": 7,
+        "midi_note": 66,
+        "note_name": "F#4",
+        "pitch_class": "F#"
+      },
+      "card": {
+        "card_id": 2007,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s2_f08": {
+      "target": {
+        "key": "s2_f08",
+        "card_id": 2008,
+        "string": 2,
+        "string_label": "B",
+        "fret": 8,
+        "midi_note": 67,
+        "note_name": "G4",
+        "pitch_class": "G"
+      },
+      "card": {
+        "card_id": 2008,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s2_f09": {
+      "target": {
+        "key": "s2_f09",
+        "card_id": 2009,
+        "string": 2,
+        "string_label": "B",
+        "fret": 9,
+        "midi_note": 68,
+        "note_name": "G#4",
+        "pitch_class": "G#"
+      },
+      "card": {
+        "card_id": 2009,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s2_f10": {
+      "target": {
+        "key": "s2_f10",
+        "card_id": 2010,
+        "string": 2,
+        "string_label": "B",
+        "fret": 10,
+        "midi_note": 69,
+        "note_name": "A4",
+        "pitch_class": "A"
+      },
+      "card": {
+        "card_id": 2010,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s2_f11": {
+      "target": {
+        "key": "s2_f11",
+        "card_id": 2011,
+        "string": 2,
+        "string_label": "B",
+        "fret": 11,
+        "midi_note": 70,
+        "note_name": "A#4",
+        "pitch_class": "A#"
+      },
+      "card": {
+        "card_id": 2011,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s2_f12": {
+      "target": {
+        "key": "s2_f12",
+        "card_id": 2012,
+        "string": 2,
+        "string_label": "B",
+        "fret": 12,
+        "midi_note": 71,
+        "note_name": "B4",
+        "pitch_class": "B"
+      },
+      "card": {
+        "card_id": 2012,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s1_f00": {
+      "target": {
+        "key": "s1_f00",
+        "card_id": 1000,
+        "string": 1,
+        "string_label": "high E",
+        "fret": 0,
+        "midi_note": 64,
+        "note_name": "E4",
+        "pitch_class": "E"
+      },
+      "card": {
+        "card_id": 1000,
+        "state": 1,
+        "step": 0,
+        "stability": 0.04262298919625833,
+        "difficulty": 9.452656380103074,
+        "due": "2026-07-09T14:08:54.723341+00:00",
+        "last_review": "2026-07-09T14:03:24.723341+00:00"
+      },
+      "points": 0,
+      "attempts": 4,
+      "correct": 2,
+      "wrong": 2,
+      "prompt_count": 2,
+      "last_prompted_at": "2026-07-09T14:03:15.209088+00:00",
+      "last_reviewed_at": "2026-07-09T14:03:24.723341+00:00",
+      "reviews": [
+        {
+          "card_id": 1000,
+          "rating": 1,
+          "review_datetime": "2026-07-09T13:53:00.531849+00:00",
+          "review_duration": 7008,
+          "target_key": "s1_f00",
+          "detected_midi_note": 40,
+          "detected_note_name": "E2"
+        },
+        {
+          "card_id": 1000,
+          "rating": 2,
+          "review_datetime": "2026-07-09T13:53:10.323139+00:00",
+          "review_duration": 16799,
+          "target_key": "s1_f00",
+          "detected_midi_note": 64,
+          "detected_note_name": "E4"
+        },
+        {
+          "card_id": 1000,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:03:23.860039+00:00",
+          "review_duration": 8632,
+          "target_key": "s1_f00",
+          "detected_midi_note": 39,
+          "detected_note_name": "D#2"
+        },
+        {
+          "card_id": 1000,
+          "rating": 2,
+          "review_datetime": "2026-07-09T14:03:24.723341+00:00",
+          "review_duration": 9495,
+          "target_key": "s1_f00",
+          "detected_midi_note": 64,
+          "detected_note_name": "E4"
+        }
+      ]
+    },
+    "s1_f01": {
+      "target": {
+        "key": "s1_f01",
+        "card_id": 1001,
+        "string": 1,
+        "string_label": "high E",
+        "fret": 1,
+        "midi_note": 65,
+        "note_name": "F4",
+        "pitch_class": "F"
+      },
+      "card": {
+        "card_id": 1001,
+        "state": 1,
+        "step": 0,
+        "stability": 0.04262298919625833,
+        "difficulty": 9.452656380103074,
+        "due": "2026-07-09T14:09:23.427303+00:00",
+        "last_review": "2026-07-09T14:03:53.427303+00:00"
+      },
+      "points": 0,
+      "attempts": 4,
+      "correct": 2,
+      "wrong": 2,
+      "prompt_count": 2,
+      "last_prompted_at": "2026-07-09T14:03:49.014127+00:00",
+      "last_reviewed_at": "2026-07-09T14:03:53.427303+00:00",
+      "reviews": [
+        {
+          "card_id": 1001,
+          "rating": 1,
+          "review_datetime": "2026-07-09T13:53:11.219021+00:00",
+          "review_duration": 90,
+          "target_key": "s1_f01",
+          "detected_midi_note": 64,
+          "detected_note_name": "E4"
+        },
+        {
+          "card_id": 1001,
+          "rating": 2,
+          "review_datetime": "2026-07-09T13:53:16.690995+00:00",
+          "review_duration": 5562,
+          "target_key": "s1_f01",
+          "detected_midi_note": 65,
+          "detected_note_name": "F4"
+        },
+        {
+          "card_id": 1001,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:03:52.179231+00:00",
+          "review_duration": 3162,
+          "target_key": "s1_f01",
+          "detected_midi_note": 66,
+          "detected_note_name": "F#4"
+        },
+        {
+          "card_id": 1001,
+          "rating": 2,
+          "review_datetime": "2026-07-09T14:03:53.427303+00:00",
+          "review_duration": 4411,
+          "target_key": "s1_f01",
+          "detected_midi_note": 65,
+          "detected_note_name": "F4"
+        }
+      ]
+    },
+    "s1_f02": {
+      "target": {
+        "key": "s1_f02",
+        "card_id": 1002,
+        "string": 1,
+        "string_label": "high E",
+        "fret": 2,
+        "midi_note": 66,
+        "note_name": "F#4",
+        "pitch_class": "F#"
+      },
+      "card": {
+        "card_id": 1002,
+        "state": 2,
+        "step": null,
+        "stability": 2.3065,
+        "difficulty": 2.111214235785395,
+        "due": "2026-07-11T14:03:30.995095+00:00",
+        "last_review": "2026-07-09T14:03:30.995095+00:00"
+      },
+      "points": 4,
+      "attempts": 2,
+      "correct": 2,
+      "wrong": 0,
+      "prompt_count": 2,
+      "last_prompted_at": "2026-07-09T14:03:25.526125+00:00",
+      "last_reviewed_at": "2026-07-09T14:03:30.995095+00:00",
+      "reviews": [
+        {
+          "card_id": 1002,
+          "rating": 3,
+          "review_datetime": "2026-07-09T13:53:22.098931+00:00",
+          "review_duration": 4603,
+          "target_key": "s1_f02",
+          "detected_midi_note": 66,
+          "detected_note_name": "F#4"
+        },
+        {
+          "card_id": 1002,
+          "rating": 3,
+          "review_datetime": "2026-07-09T14:03:30.995095+00:00",
+          "review_duration": 5466,
+          "target_key": "s1_f02",
+          "detected_midi_note": 66,
+          "detected_note_name": "F#4"
+        }
+      ]
+    },
+    "s1_f03": {
+      "target": {
+        "key": "s1_f03",
+        "card_id": 1003,
+        "string": 1,
+        "string_label": "high E",
+        "fret": 3,
+        "midi_note": 67,
+        "note_name": "G4",
+        "pitch_class": "G"
+      },
+      "card": {
+        "card_id": 1003,
+        "state": 2,
+        "step": null,
+        "stability": 8.2956,
+        "difficulty": 1.0,
+        "due": "2026-07-18T13:53:24.530986+00:00",
+        "last_review": "2026-07-09T13:53:24.530986+00:00"
+      },
+      "points": 3,
+      "attempts": 1,
+      "correct": 1,
+      "wrong": 0,
+      "prompt_count": 1,
+      "last_prompted_at": "2026-07-09T13:53:22.901692+00:00",
+      "last_reviewed_at": "2026-07-09T13:53:24.530986+00:00",
+      "reviews": [
+        {
+          "card_id": 1003,
+          "rating": 4,
+          "review_datetime": "2026-07-09T13:53:24.530986+00:00",
+          "review_duration": 1627,
+          "target_key": "s1_f03",
+          "detected_midi_note": 67,
+          "detected_note_name": "G4"
+        }
+      ]
+    },
+    "s1_f04": {
+      "target": {
+        "key": "s1_f04",
+        "card_id": 1004,
+        "string": 1,
+        "string_label": "high E",
+        "fret": 4,
+        "midi_note": 68,
+        "note_name": "G#4",
+        "pitch_class": "G#"
+      },
+      "card": {
+        "card_id": 1004,
+        "state": 1,
+        "step": 1,
+        "stability": 0.05511889328085258,
+        "difficulty": 9.438432093019808,
+        "due": "2026-07-09T14:30:04.574648+00:00",
+        "last_review": "2026-07-09T14:20:04.574648+00:00"
+      },
+      "points": 2,
+      "attempts": 5,
+      "correct": 3,
+      "wrong": 2,
+      "prompt_count": 3,
+      "last_prompted_at": "2026-07-09T14:20:00.737572+00:00",
+      "last_reviewed_at": "2026-07-09T14:20:04.574648+00:00",
+      "reviews": [
+        {
+          "card_id": 1004,
+          "rating": 1,
+          "review_datetime": "2026-07-09T13:53:25.427003+00:00",
+          "review_duration": 90,
+          "target_key": "s1_f04",
+          "detected_midi_note": 67,
+          "detected_note_name": "G4"
+        },
+        {
+          "card_id": 1004,
+          "rating": 2,
+          "review_datetime": "2026-07-09T13:53:30.035068+00:00",
+          "review_duration": 4698,
+          "target_key": "s1_f04",
+          "detected_midi_note": 68,
+          "detected_note_name": "G#4"
+        },
+        {
+          "card_id": 1004,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:03:57.011210+00:00",
+          "review_duration": 2778,
+          "target_key": "s1_f04",
+          "detected_midi_note": 66,
+          "detected_note_name": "F#4"
+        },
+        {
+          "card_id": 1004,
+          "rating": 2,
+          "review_datetime": "2026-07-09T14:03:58.739177+00:00",
+          "review_duration": 4506,
+          "target_key": "s1_f04",
+          "detected_midi_note": 68,
+          "detected_note_name": "G#4"
+        },
+        {
+          "card_id": 1004,
+          "rating": 3,
+          "review_datetime": "2026-07-09T14:20:04.574648+00:00",
+          "review_duration": 3834,
+          "target_key": "s1_f04",
+          "detected_midi_note": 68,
+          "detected_note_name": "G#4"
+        }
+      ]
+    },
+    "s1_f05": {
+      "target": {
+        "key": "s1_f05",
+        "card_id": 1005,
+        "string": 1,
+        "string_label": "high E",
+        "fret": 5,
+        "midi_note": 69,
+        "note_name": "A4",
+        "pitch_class": "A"
+      },
+      "card": {
+        "card_id": 1005,
+        "state": 1,
+        "step": 0,
+        "stability": 0.009780281824317793,
+        "difficulty": 9.913225071486412,
+        "due": "2026-07-09T14:25:29.934408+00:00",
+        "last_review": "2026-07-09T14:19:59.934408+00:00"
+      },
+      "points": -2,
+      "attempts": 6,
+      "correct": 2,
+      "wrong": 4,
+      "prompt_count": 3,
+      "last_prompted_at": "2026-07-09T14:19:48.098227+00:00",
+      "last_reviewed_at": "2026-07-09T14:19:59.934408+00:00",
+      "reviews": [
+        {
+          "card_id": 1005,
+          "rating": 1,
+          "review_datetime": "2026-07-09T13:53:30.930725+00:00",
+          "review_duration": 90,
+          "target_key": "s1_f05",
+          "detected_midi_note": 68,
+          "detected_note_name": "G#4"
+        },
+        {
+          "card_id": 1005,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:03:41.107308+00:00",
+          "review_duration": 9307,
+          "target_key": "s1_f05",
+          "detected_midi_note": 70,
+          "detected_note_name": "A#4"
+        },
+        {
+          "card_id": 1005,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:03:44.275287+00:00",
+          "review_duration": 12475,
+          "target_key": "s1_f05",
+          "detected_midi_note": 68,
+          "detected_note_name": "G#4"
+        },
+        {
+          "card_id": 1005,
+          "rating": 2,
+          "review_datetime": "2026-07-09T14:03:48.211181+00:00",
+          "review_duration": 16411,
+          "target_key": "s1_f05",
+          "detected_midi_note": 69,
+          "detected_note_name": "A4"
+        },
+        {
+          "card_id": 1005,
+          "rating": 1,
+          "review_datetime": "2026-07-09T14:19:48.222741+00:00",
+          "review_duration": 91,
+          "target_key": "s1_f05",
+          "detected_midi_note": 61,
+          "detected_note_name": "C#4"
+        },
+        {
+          "card_id": 1005,
+          "rating": 2,
+          "review_datetime": "2026-07-09T14:19:59.934408+00:00",
+          "review_duration": 11803,
+          "target_key": "s1_f05",
+          "detected_midi_note": 69,
+          "detected_note_name": "A4"
+        }
+      ]
+    },
+    "s1_f06": {
+      "target": {
+        "key": "s1_f06",
+        "card_id": 1006,
+        "string": 1,
+        "string_label": "high E",
+        "fret": 6,
+        "midi_note": 70,
+        "note_name": "A#4",
+        "pitch_class": "A#"
+      },
+      "card": {
+        "card_id": 1006,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s1_f07": {
+      "target": {
+        "key": "s1_f07",
+        "card_id": 1007,
+        "string": 1,
+        "string_label": "high E",
+        "fret": 7,
+        "midi_note": 71,
+        "note_name": "B4",
+        "pitch_class": "B"
+      },
+      "card": {
+        "card_id": 1007,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s1_f08": {
+      "target": {
+        "key": "s1_f08",
+        "card_id": 1008,
+        "string": 1,
+        "string_label": "high E",
+        "fret": 8,
+        "midi_note": 72,
+        "note_name": "C5",
+        "pitch_class": "C"
+      },
+      "card": {
+        "card_id": 1008,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s1_f09": {
+      "target": {
+        "key": "s1_f09",
+        "card_id": 1009,
+        "string": 1,
+        "string_label": "high E",
+        "fret": 9,
+        "midi_note": 73,
+        "note_name": "C#5",
+        "pitch_class": "C#"
+      },
+      "card": {
+        "card_id": 1009,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s1_f10": {
+      "target": {
+        "key": "s1_f10",
+        "card_id": 1010,
+        "string": 1,
+        "string_label": "high E",
+        "fret": 10,
+        "midi_note": 74,
+        "note_name": "D5",
+        "pitch_class": "D"
+      },
+      "card": {
+        "card_id": 1010,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s1_f11": {
+      "target": {
+        "key": "s1_f11",
+        "card_id": 1011,
+        "string": 1,
+        "string_label": "high E",
+        "fret": 11,
+        "midi_note": 75,
+        "note_name": "D#5",
+        "pitch_class": "D#"
+      },
+      "card": {
+        "card_id": 1011,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    },
+    "s1_f12": {
+      "target": {
+        "key": "s1_f12",
+        "card_id": 1012,
+        "string": 1,
+        "string_label": "high E",
+        "fret": 12,
+        "midi_note": 76,
+        "note_name": "E5",
+        "pitch_class": "E"
+      },
+      "card": {
+        "card_id": 1012,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-09T13:52:45.204183+00:00",
+        "last_review": null
+      },
+      "points": 0,
+      "attempts": 0,
+      "correct": 0,
+      "wrong": 0,
+      "prompt_count": 0,
+      "last_prompted_at": null,
+      "last_reviewed_at": null,
+      "reviews": []
+    }
+  }
+}
