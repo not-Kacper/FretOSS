@@ -1,0 +1,792 @@
+{
+  "generated_by": "tools/gen_deck_fixture.py",
+  "generated_from": "main.py FretboardDeck._build_targets()",
+  "decks": {
+    "config.json": {
+      "config_path": "config.json",
+      "count": 78,
+      "targets": [
+        {
+          "key": "s6_f00",
+          "card_id": 6000,
+          "string": 6,
+          "string_label": "low E",
+          "fret": 0,
+          "midi_note": 40,
+          "note_name": "E2",
+          "pitch_class": "E"
+        },
+        {
+          "key": "s6_f01",
+          "card_id": 6001,
+          "string": 6,
+          "string_label": "low E",
+          "fret": 1,
+          "midi_note": 41,
+          "note_name": "F2",
+          "pitch_class": "F"
+        },
+        {
+          "key": "s6_f02",
+          "card_id": 6002,
+          "string": 6,
+          "string_label": "low E",
+          "fret": 2,
+          "midi_note": 42,
+          "note_name": "F#2",
+          "pitch_class": "F#"
+        },
+        {
+          "key": "s6_f03",
+          "card_id": 6003,
+          "string": 6,
+          "string_label": "low E",
+          "fret": 3,
+          "midi_note": 43,
+          "note_name": "G2",
+          "pitch_class": "G"
+        },
+        {
+          "key": "s6_f04",
+          "card_id": 6004,
+          "string": 6,
+          "string_label": "low E",
+          "fret": 4,
+          "midi_note": 44,
+          "note_name": "G#2",
+          "pitch_class": "G#"
+        },
+        {
+          "key": "s6_f05",
+          "card_id": 6005,
+          "string": 6,
+          "string_label": "low E",
+          "fret": 5,
+          "midi_note": 45,
+          "note_name": "A2",
+          "pitch_class": "A"
+        },
+        {
+          "key": "s6_f06",
+          "card_id": 6006,
+          "string": 6,
+          "string_label": "low E",
+          "fret": 6,
+          "midi_note": 46,
+          "note_name": "A#2",
+          "pitch_class": "A#"
+        },
+        {
+          "key": "s6_f07",
+          "card_id": 6007,
+          "string": 6,
+          "string_label": "low E",
+          "fret": 7,
+          "midi_note": 47,
+          "note_name": "B2",
+          "pitch_class": "B"
+        },
+        {
+          "key": "s6_f08",
+          "card_id": 6008,
+          "string": 6,
+          "string_label": "low E",
+          "fret": 8,
+          "midi_note": 48,
+          "note_name": "C3",
+          "pitch_class": "C"
+        },
+        {
+          "key": "s6_f09",
+          "card_id": 6009,
+          "string": 6,
+          "string_label": "low E",
+          "fret": 9,
+          "midi_note": 49,
+          "note_name": "C#3",
+          "pitch_class": "C#"
+        },
+        {
+          "key": "s6_f10",
+          "card_id": 6010,
+          "string": 6,
+          "string_label": "low E",
+          "fret": 10,
+          "midi_note": 50,
+          "note_name": "D3",
+          "pitch_class": "D"
+        },
+        {
+          "key": "s6_f11",
+          "card_id": 6011,
+          "string": 6,
+          "string_label": "low E",
+          "fret": 11,
+          "midi_note": 51,
+          "note_name": "D#3",
+          "pitch_class": "D#"
+        },
+        {
+          "key": "s6_f12",
+          "card_id": 6012,
+          "string": 6,
+          "string_label": "low E",
+          "fret": 12,
+          "midi_note": 52,
+          "note_name": "E3",
+          "pitch_class": "E"
+        },
+        {
+          "key": "s5_f00",
+          "card_id": 5000,
+          "string": 5,
+          "string_label": "A",
+          "fret": 0,
+          "midi_note": 45,
+          "note_name": "A2",
+          "pitch_class": "A"
+        },
+        {
+          "key": "s5_f01",
+          "card_id": 5001,
+          "string": 5,
+          "string_label": "A",
+          "fret": 1,
+          "midi_note": 46,
+          "note_name": "A#2",
+          "pitch_class": "A#"
+        },
+        {
+          "key": "s5_f02",
+          "card_id": 5002,
+          "string": 5,
+          "string_label": "A",
+          "fret": 2,
+          "midi_note": 47,
+          "note_name": "B2",
+          "pitch_class": "B"
+        },
+        {
+          "key": "s5_f03",
+          "card_id": 5003,
+          "string": 5,
+          "string_label": "A",
+          "fret": 3,
+          "midi_note": 48,
+          "note_name": "C3",
+          "pitch_class": "C"
+        },
+        {
+          "key": "s5_f04",
+          "card_id": 5004,
+          "string": 5,
+          "string_label": "A",
+          "fret": 4,
+          "midi_note": 49,
+          "note_name": "C#3",
+          "pitch_class": "C#"
+        },
+        {
+          "key": "s5_f05",
+          "card_id": 5005,
+          "string": 5,
+          "string_label": "A",
+          "fret": 5,
+          "midi_note": 50,
+          "note_name": "D3",
+          "pitch_class": "D"
+        },
+        {
+          "key": "s5_f06",
+          "card_id": 5006,
+          "string": 5,
+          "string_label": "A",
+          "fret": 6,
+          "midi_note": 51,
+          "note_name": "D#3",
+          "pitch_class": "D#"
+        },
+        {
+          "key": "s5_f07",
+          "card_id": 5007,
+          "string": 5,
+          "string_label": "A",
+          "fret": 7,
+          "midi_note": 52,
+          "note_name": "E3",
+          "pitch_class": "E"
+        },
+        {
+          "key": "s5_f08",
+          "card_id": 5008,
+          "string": 5,
+          "string_label": "A",
+          "fret": 8,
+          "midi_note": 53,
+          "note_name": "F3",
+          "pitch_class": "F"
+        },
+        {
+          "key": "s5_f09",
+          "card_id": 5009,
+          "string": 5,
+          "string_label": "A",
+          "fret": 9,
+          "midi_note": 54,
+          "note_name": "F#3",
+          "pitch_class": "F#"
+        },
+        {
+          "key": "s5_f10",
+          "card_id": 5010,
+          "string": 5,
+          "string_label": "A",
+          "fret": 10,
+          "midi_note": 55,
+          "note_name": "G3",
+          "pitch_class": "G"
+        },
+        {
+          "key": "s5_f11",
+          "card_id": 5011,
+          "string": 5,
+          "string_label": "A",
+          "fret": 11,
+          "midi_note": 56,
+          "note_name": "G#3",
+          "pitch_class": "G#"
+        },
+        {
+          "key": "s5_f12",
+          "card_id": 5012,
+          "string": 5,
+          "string_label": "A",
+          "fret": 12,
+          "midi_note": 57,
+          "note_name": "A3",
+          "pitch_class": "A"
+        },
+        {
+          "key": "s4_f00",
+          "card_id": 4000,
+          "string": 4,
+          "string_label": "D",
+          "fret": 0,
+          "midi_note": 50,
+          "note_name": "D3",
+          "pitch_class": "D"
+        },
+        {
+          "key": "s4_f01",
+          "card_id": 4001,
+          "string": 4,
+          "string_label": "D",
+          "fret": 1,
+          "midi_note": 51,
+          "note_name": "D#3",
+          "pitch_class": "D#"
+        },
+        {
+          "key": "s4_f02",
+          "card_id": 4002,
+          "string": 4,
+          "string_label": "D",
+          "fret": 2,
+          "midi_note": 52,
+          "note_name": "E3",
+          "pitch_class": "E"
+        },
+        {
+          "key": "s4_f03",
+          "card_id": 4003,
+          "string": 4,
+          "string_label": "D",
+          "fret": 3,
+          "midi_note": 53,
+          "note_name": "F3",
+          "pitch_class": "F"
+        },
+        {
+          "key": "s4_f04",
+          "card_id": 4004,
+          "string": 4,
+          "string_label": "D",
+          "fret": 4,
+          "midi_note": 54,
+          "note_name": "F#3",
+          "pitch_class": "F#"
+        },
+        {
+          "key": "s4_f05",
+          "card_id": 4005,
+          "string": 4,
+          "string_label": "D",
+          "fret": 5,
+          "midi_note": 55,
+          "note_name": "G3",
+          "pitch_class": "G"
+        },
+        {
+          "key": "s4_f06",
+          "card_id": 4006,
+          "string": 4,
+          "string_label": "D",
+          "fret": 6,
+          "midi_note": 56,
+          "note_name": "G#3",
+          "pitch_class": "G#"
+        },
+        {
+          "key": "s4_f07",
+          "card_id": 4007,
+          "string": 4,
+          "string_label": "D",
+          "fret": 7,
+          "midi_note": 57,
+          "note_name": "A3",
+          "pitch_class": "A"
+        },
+        {
+          "key": "s4_f08",
+          "card_id": 4008,
+          "string": 4,
+          "string_label": "D",
+          "fret": 8,
+          "midi_note": 58,
+          "note_name": "A#3",
+          "pitch_class": "A#"
+        },
+        {
+          "key": "s4_f09",
+          "card_id": 4009,
+          "string": 4,
+          "string_label": "D",
+          "fret": 9,
+          "midi_note": 59,
+          "note_name": "B3",
+          "pitch_class": "B"
+        },
+        {
+          "key": "s4_f10",
+          "card_id": 4010,
+          "string": 4,
+          "string_label": "D",
+          "fret": 10,
+          "midi_note": 60,
+          "note_name": "C4",
+          "pitch_class": "C"
+        },
+        {
+          "key": "s4_f11",
+          "card_id": 4011,
+          "string": 4,
+          "string_label": "D",
+          "fret": 11,
+          "midi_note": 61,
+          "note_name": "C#4",
+          "pitch_class": "C#"
+        },
+        {
+          "key": "s4_f12",
+          "card_id": 4012,
+          "string": 4,
+          "string_label": "D",
+          "fret": 12,
+          "midi_note": 62,
+          "note_name": "D4",
+          "pitch_class": "D"
+        },
+        {
+          "key": "s3_f00",
+          "card_id": 3000,
+          "string": 3,
+          "string_label": "G",
+          "fret": 0,
+          "midi_note": 55,
+          "note_name": "G3",
+          "pitch_class": "G"
+        },
+        {
+          "key": "s3_f01",
+          "card_id": 3001,
+          "string": 3,
+          "string_label": "G",
+          "fret": 1,
+          "midi_note": 56,
+          "note_name": "G#3",
+          "pitch_class": "G#"
+        },
+        {
+          "key": "s3_f02",
+          "card_id": 3002,
+          "string": 3,
+          "string_label": "G",
+          "fret": 2,
+          "midi_note": 57,
+          "note_name": "A3",
+          "pitch_class": "A"
+        },
+        {
+          "key": "s3_f03",
+          "card_id": 3003,
+          "string": 3,
+          "string_label": "G",
+          "fret": 3,
+          "midi_note": 58,
+          "note_name": "A#3",
+          "pitch_class": "A#"
+        },
+        {
+          "key": "s3_f04",
+          "card_id": 3004,
+          "string": 3,
+          "string_label": "G",
+          "fret": 4,
+          "midi_note": 59,
+          "note_name": "B3",
+          "pitch_class": "B"
+        },
+        {
+          "key": "s3_f05",
+          "card_id": 3005,
+          "string": 3,
+          "string_label": "G",
+          "fret": 5,
+          "midi_note": 60,
+          "note_name": "C4",
+          "pitch_class": "C"
+        },
+        {
+          "key": "s3_f06",
+          "card_id": 3006,
+          "string": 3,
+          "string_label": "G",
+          "fret": 6,
+          "midi_note": 61,
+          "note_name": "C#4",
+          "pitch_class": "C#"
+        },
+        {
+          "key": "s3_f07",
+          "card_id": 3007,
+          "string": 3,
+          "string_label": "G",
+          "fret": 7,
+          "midi_note": 62,
+          "note_name": "D4",
+          "pitch_class": "D"
+        },
+        {
+          "key": "s3_f08",
+          "card_id": 3008,
+          "string": 3,
+          "string_label": "G",
+          "fret": 8,
+          "midi_note": 63,
+          "note_name": "D#4",
+          "pitch_class": "D#"
+        },
+        {
+          "key": "s3_f09",
+          "card_id": 3009,
+          "string": 3,
+          "string_label": "G",
+          "fret": 9,
+          "midi_note": 64,
+          "note_name": "E4",
+          "pitch_class": "E"
+        },
+        {
+          "key": "s3_f10",
+          "card_id": 3010,
+          "string": 3,
+          "string_label": "G",
+          "fret": 10,
+          "midi_note": 65,
+          "note_name": "F4",
+          "pitch_class": "F"
+        },
+        {
+          "key": "s3_f11",
+          "card_id": 3011,
+          "string": 3,
+          "string_label": "G",
+          "fret": 11,
+          "midi_note": 66,
+          "note_name": "F#4",
+          "pitch_class": "F#"
+        },
+        {
+          "key": "s3_f12",
+          "card_id": 3012,
+          "string": 3,
+          "string_label": "G",
+          "fret": 12,
+          "midi_note": 67,
+          "note_name": "G4",
+          "pitch_class": "G"
+        },
+        {
+          "key": "s2_f00",
+          "card_id": 2000,
+          "string": 2,
+          "string_label": "B",
+          "fret": 0,
+          "midi_note": 59,
+          "note_name": "B3",
+          "pitch_class": "B"
+        },
+        {
+          "key": "s2_f01",
+          "card_id": 2001,
+          "string": 2,
+          "string_label": "B",
+          "fret": 1,
+          "midi_note": 60,
+          "note_name": "C4",
+          "pitch_class": "C"
+        },
+        {
+          "key": "s2_f02",
+          "card_id": 2002,
+          "string": 2,
+          "string_label": "B",
+          "fret": 2,
+          "midi_note": 61,
+          "note_name": "C#4",
+          "pitch_class": "C#"
+        },
+        {
+          "key": "s2_f03",
+          "card_id": 2003,
+          "string": 2,
+          "string_label": "B",
+          "fret": 3,
+          "midi_note": 62,
+          "note_name": "D4",
+          "pitch_class": "D"
+        },
+        {
+          "key": "s2_f04",
+          "card_id": 2004,
+          "string": 2,
+          "string_label": "B",
+          "fret": 4,
+          "midi_note": 63,
+          "note_name": "D#4",
+          "pitch_class": "D#"
+        },
+        {
+          "key": "s2_f05",
+          "card_id": 2005,
+          "string": 2,
+          "string_label": "B",
+          "fret": 5,
+          "midi_note": 64,
+          "note_name": "E4",
+          "pitch_class": "E"
+        },
+        {
+          "key": "s2_f06",
+          "card_id": 2006,
+          "string": 2,
+          "string_label": "B",
+          "fret": 6,
+          "midi_note": 65,
+          "note_name": "F4",
+          "pitch_class": "F"
+        },
+        {
+          "key": "s2_f07",
+          "card_id": 2007,
+          "string": 2,
+          "string_label": "B",
+          "fret": 7,
+          "midi_note": 66,
+          "note_name": "F#4",
+          "pitch_class": "F#"
+        },
+        {
+          "key": "s2_f08",
+          "card_id": 2008,
+          "string": 2,
+          "string_label": "B",
+          "fret": 8,
+          "midi_note": 67,
+          "note_name": "G4",
+          "pitch_class": "G"
+        },
+        {
+          "key": "s2_f09",
+          "card_id": 2009,
+          "string": 2,
+          "string_label": "B",
+          "fret": 9,
+          "midi_note": 68,
+          "note_name": "G#4",
+          "pitch_class": "G#"
+        },
+        {
+          "key": "s2_f10",
+          "card_id": 2010,
+          "string": 2,
+          "string_label": "B",
+          "fret": 10,
+          "midi_note": 69,
+          "note_name": "A4",
+          "pitch_class": "A"
+        },
+        {
+          "key": "s2_f11",
+          "card_id": 2011,
+          "string": 2,
+          "string_label": "B",
+          "fret": 11,
+          "midi_note": 70,
+          "note_name": "A#4",
+          "pitch_class": "A#"
+        },
+        {
+          "key": "s2_f12",
+          "card_id": 2012,
+          "string": 2,
+          "string_label": "B",
+          "fret": 12,
+          "midi_note": 71,
+          "note_name": "B4",
+          "pitch_class": "B"
+        },
+        {
+          "key": "s1_f00",
+          "card_id": 1000,
+          "string": 1,
+          "string_label": "high E",
+          "fret": 0,
+          "midi_note": 64,
+          "note_name": "E4",
+          "pitch_class": "E"
+        },
+        {
+          "key": "s1_f01",
+          "card_id": 1001,
+          "string": 1,
+          "string_label": "high E",
+          "fret": 1,
+          "midi_note": 65,
+          "note_name": "F4",
+          "pitch_class": "F"
+        },
+        {
+          "key": "s1_f02",
+          "card_id": 1002,
+          "string": 1,
+          "string_label": "high E",
+          "fret": 2,
+          "midi_note": 66,
+          "note_name": "F#4",
+          "pitch_class": "F#"
+        },
+        {
+          "key": "s1_f03",
+          "card_id": 1003,
+          "string": 1,
+          "string_label": "high E",
+          "fret": 3,
+          "midi_note": 67,
+          "note_name": "G4",
+          "pitch_class": "G"
+        },
+        {
+          "key": "s1_f04",
+          "card_id": 1004,
+          "string": 1,
+          "string_label": "high E",
+          "fret": 4,
+          "midi_note": 68,
+          "note_name": "G#4",
+          "pitch_class": "G#"
+        },
+        {
+          "key": "s1_f05",
+          "card_id": 1005,
+          "string": 1,
+          "string_label": "high E",
+          "fret": 5,
+          "midi_note": 69,
+          "note_name": "A4",
+          "pitch_class": "A"
+        },
+        {
+          "key": "s1_f06",
+          "card_id": 1006,
+          "string": 1,
+          "string_label": "high E",
+          "fret": 6,
+          "midi_note": 70,
+          "note_name": "A#4",
+          "pitch_class": "A#"
+        },
+        {
+          "key": "s1_f07",
+          "card_id": 1007,
+          "string": 1,
+          "string_label": "high E",
+          "fret": 7,
+          "midi_note": 71,
+          "note_name": "B4",
+          "pitch_class": "B"
+        },
+        {
+          "key": "s1_f08",
+          "card_id": 1008,
+          "string": 1,
+          "string_label": "high E",
+          "fret": 8,
+          "midi_note": 72,
+          "note_name": "C5",
+          "pitch_class": "C"
+        },
+        {
+          "key": "s1_f09",
+          "card_id": 1009,
+          "string": 1,
+          "string_label": "high E",
+          "fret": 9,
+          "midi_note": 73,
+          "note_name": "C#5",
+          "pitch_class": "C#"
+        },
+        {
+          "key": "s1_f10",
+          "card_id": 1010,
+          "string": 1,
+          "string_label": "high E",
+          "fret": 10,
+          "midi_note": 74,
+          "note_name": "D5",
+          "pitch_class": "D"
+        },
+        {
+          "key": "s1_f11",
+          "card_id": 1011,
+          "string": 1,
+          "string_label": "high E",
+          "fret": 11,
+          "midi_note": 75,
+          "note_name": "D#5",
+          "pitch_class": "D#"
+        },
+        {
+          "key": "s1_f12",
+          "card_id": 1012,
+          "string": 1,
+          "string_label": "high E",
+          "fret": 12,
+          "midi_note": 76,
+          "note_name": "E5",
+          "pitch_class": "E"
+        }
+      ]
+    }
+  }
+}
