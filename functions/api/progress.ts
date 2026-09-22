@@ -1,22 +1,19 @@
 /**
  * functions/api/progress.ts — Cloudflare Pages Function (runs as a Worker).
  *
- *   GET /api/progress?uid=xxx -> the last stored progress blob for that uid
- *   PUT /api/progress?uid=xxx -> upsert the blob into D1
+ *   GET /api/progress?deck_id=xxx  + header X-User-Token
+ *   PUT /api/progress?deck_id=xxx  + header X-User-Token
  *
- * No auth by design: `uid` is a client-generated anonymous UUID kept in
- * localStorage, used for cross-device convenience sync (never for security).
- * Anyone who knows a uid can read/write that blob.
+ * No password, no email, no signup: the 256-bit random token IS the identity.
+ * Composite D1 key is (user_token, deck_id) so two tunings never share a row.
  *
  * Response contract used by src/storage/sync.ts:
  *   200 { ...blob }   — stored payload (its `data` column, JSON-parsed)
- *   404 { error }     — nothing stored for this uid yet
- *   400 { error }     — missing uid / invalid JSON body
+ *   404 { error }     — nothing stored for this token+deck yet
+ *   400 { error }     — missing/malformed token or deck_id / invalid JSON body
  *   500 { error }     — D1 failure
  */
 
-// Minimal structural types so this file type-checks without pulling in
-// @cloudflare/workers-types globally (which would clash with the DOM lib).
 interface D1PreparedStatement {
   bind(...values: unknown[]): D1PreparedStatement;
   first<T = unknown>(): Promise<T | null>;
@@ -37,7 +34,9 @@ interface PagesContext {
   env: Env;
 }
 
-const MAX_BODY_BYTES = 8 * 1024 * 1024; // progress.json is ~70 KB in practice.
+const MAX_BODY_BYTES = 8 * 1024 * 1024;
+const USER_TOKEN_HEADER = 'X-User-Token';
+const TOKEN_HEX_LENGTH = 64;
 
 function json(body: unknown, status = 200): Response {
   return new Response(JSON.stringify(body), {
@@ -49,28 +48,39 @@ function json(body: unknown, status = 200): Response {
   });
 }
 
-function readUid(request: Request): string | null {
-  const uid = new URL(request.url).searchParams.get('uid');
-  if (uid === null) return null;
-  const trimmed = uid.trim();
-  if (trimmed.length === 0 || trimmed.length > 200) return null;
+export function readUserToken(request: Request): string | null {
+  const header = request.headers.get(USER_TOKEN_HEADER) ?? request.headers.get(USER_TOKEN_HEADER.toLowerCase());
+  if (header === null) return null;
+  const trimmed = header.trim().toLowerCase();
+  if (trimmed.length !== TOKEN_HEX_LENGTH || !/^[0-9a-f]+$/.test(trimmed)) return null;
   return trimmed;
 }
 
-/** GET /api/progress?uid=xxx */
+export function readDeckId(request: Request): string | null {
+  const fromHeader = request.headers.get('X-Deck-Id') ?? request.headers.get('x-deck-id');
+  const fromQuery = new URL(request.url).searchParams.get('deck_id');
+  const raw = (fromHeader ?? fromQuery ?? '').trim();
+  if (raw.length === 0 || raw.length > 200) return null;
+  if (!/^[A-Za-z0-9._:-]+$/.test(raw)) return null;
+  return raw;
+}
+
+/** GET /api/progress?deck_id=xxx */
 export const onRequestGet = async (context: PagesContext): Promise<Response> => {
-  const uid = readUid(context.request);
-  if (!uid) return json({ error: 'missing uid' }, 400);
+  const token = readUserToken(context.request);
+  if (!token) return json({ error: 'missing or malformed X-User-Token' }, 400);
+  const deckId = readDeckId(context.request);
+  if (!deckId) return json({ error: 'missing or malformed deck_id' }, 400);
   if (!context.env?.DB) return json({ error: 'D1 binding DB is not configured' }, 500);
 
   try {
     const row = await context.env.DB.prepare(
-      'SELECT data, updated_at FROM progress WHERE user_id = ?',
+      'SELECT data, updated_at FROM progress WHERE user_token = ? AND deck_id = ?',
     )
-      .bind(uid)
+      .bind(token, deckId)
       .first<{ data: string; updated_at: string | null }>();
 
-    if (!row?.data) return json({ error: 'no progress stored for this uid' }, 404);
+    if (!row?.data) return json({ error: 'no progress stored for this token and deck' }, 404);
 
     let payload: unknown;
     try {
@@ -84,10 +94,12 @@ export const onRequestGet = async (context: PagesContext): Promise<Response> => 
   }
 };
 
-/** PUT /api/progress?uid=xxx */
+/** PUT /api/progress?deck_id=xxx */
 export const onRequestPut = async (context: PagesContext): Promise<Response> => {
-  const uid = readUid(context.request);
-  if (!uid) return json({ error: 'missing uid' }, 400);
+  const token = readUserToken(context.request);
+  if (!token) return json({ error: 'missing or malformed X-User-Token' }, 400);
+  const deckId = readDeckId(context.request);
+  if (!deckId) return json({ error: 'missing or malformed deck_id' }, 400);
   if (!context.env?.DB) return json({ error: 'D1 binding DB is not configured' }, 500);
 
   const raw = await context.request.text();
@@ -105,13 +117,13 @@ export const onRequestPut = async (context: PagesContext): Promise<Response> => 
 
   try {
     await context.env.DB.prepare(
-      `INSERT INTO progress (user_id, data, updated_at)
-       VALUES (?, ?, datetime('now'))
-       ON CONFLICT(user_id) DO UPDATE SET
+      `INSERT INTO progress (user_token, deck_id, data, updated_at)
+       VALUES (?, ?, ?, datetime('now'))
+       ON CONFLICT(user_token, deck_id) DO UPDATE SET
          data = excluded.data,
          updated_at = excluded.updated_at`,
     )
-      .bind(uid, JSON.stringify(parsed))
+      .bind(token, deckId, JSON.stringify(parsed))
       .run();
 
     return json({ ok: true, updated_at: new Date().toISOString() });

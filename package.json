@@ -13,8 +13,8 @@
     "test:watch": "vitest",
     "deploy": "npm run build && wrangler pages deploy dist",
     "db:create": "wrangler d1 create fretboard_progress",
-    "db:migrate:local": "wrangler d1 execute fretboard_progress --local --file=./migrations/0001_init.sql",
-    "db:migrate:remote": "wrangler d1 execute fretboard_progress --remote --file=./migrations/0001_init.sql"
+    "db:migrate:local": "wrangler d1 execute fretboard_progress --local --file=./migrations/0001_init.sql && wrangler d1 execute fretboard_progress --local --file=./migrations/0002_composite_key.sql",
+    "db:migrate:remote": "wrangler d1 execute fretboard_progress --remote --file=./migrations/0001_init.sql && wrangler d1 execute fretboard_progress --remote --file=./migrations/0002_composite_key.sql"
   },
   "dependencies": {
     "react": "^18.3.1",

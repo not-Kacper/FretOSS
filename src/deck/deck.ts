@@ -1,18 +1,12 @@
 /**
- * deck/deck.ts — port of main.py's fretboard deck construction.
- *
- *   FretboardDeck._build_targets -> buildTargets()
- *   _parse_note_token            -> parseNoteToken()
- *   _build_note_filter           -> buildNoteFilter()
- *   _STANDARD_TUNING_MIDI        -> STANDARD_TUNING_MIDI
- *   _STRING_LABELS               -> STRING_LABELS
- *
- * The output must match the Python deck byte-for-byte for the same config.json
- * (see tests/deck.test.ts against tests/deck-fixture.json).
+ * deck/deck.ts — port of main.py's fretboard deck construction, generalized
+ * to any TuningDef (4/5/6/7 strings) while keeping the config.json EADGBE
+ * path byte-identical for tests/deck-fixture.json.
  */
 
 import { BASE_NOTE_INDEX, NOTE_NAMES, midiToName } from '../audio/note-helpers';
 import type { FretboardTarget } from './types';
+import { stringLabelsFor, type TuningDef } from './tuning';
 
 /** main.py: `_STANDARD_TUNING_MIDI` — open-string MIDI numbers, keyed by string number. */
 export const STANDARD_TUNING_MIDI: Record<number, number> = {
@@ -124,54 +118,44 @@ export interface DeckConfig {
   notes?: unknown;
 }
 
-/**
- * main.py: `FretboardDeck._build_targets()`.
- *
- * Walks the requested strings x frets in config order (no sorting — the Python
- * code appends as it iterates), and keeps only notes allowed by
- * `deck.notes_to_learn` (`deck.notes` is the legacy key).
- */
-export function buildTargets(deck: DeckConfig): FretboardTarget[] {
-  const tuning = String(deck.tuning ?? 'EADGBE')
-    .toUpperCase()
-    .replace(/-/g, '_');
-  if (!SUPPORTED_TUNINGS.has(tuning)) {
-    throw new DeckConfigError(
-      'Only standard 6-string EADGBE tuning is supported right now.',
-    );
-  }
+/** Options for the TuningDef form of `buildTargets`. */
+export interface TargetBuildOptions {
+  strings?: number[];
+  minFret?: number;
+  maxFret?: number;
+  frets?: number[];
+  notesToLearn?: unknown;
+  notes?: unknown;
+}
 
-  const rawStrings = deck.strings ?? [6, 5, 4, 3, 2, 1];
-  const strings = rawStrings.map((stringNumber) => Math.trunc(Number(stringNumber)));
-  const unknownStrings = [...new Set(strings)]
-    .filter((stringNumber) => !(stringNumber in STANDARD_TUNING_MIDI))
-    .sort((a, b) => a - b);
-  if (unknownStrings.length > 0) {
-    throw new DeckConfigError(
-      `Unsupported guitar strings in config.json: [${unknownStrings.join(', ')}]`,
-    );
-  }
-
-  const rawFrets = deck.frets;
-  let frets: number[];
-  if (rawFrets === undefined || rawFrets === null) {
-    const minFret = Math.trunc(Number(deck.min_fret ?? 0));
-    const maxFret = Math.trunc(Number(deck.max_fret ?? 12));
-    frets = [];
-    for (let fret = minFret; fret <= maxFret; fret++) frets.push(fret);
+function resolveFretList(
+  frets: number[] | undefined,
+  minFret: number,
+  maxFret: number,
+): number[] {
+  let list: number[];
+  if (frets === undefined || frets === null) {
+    list = [];
+    for (let fret = minFret; fret <= maxFret; fret++) list.push(fret);
   } else {
-    frets = rawFrets.map((fret) => Math.trunc(Number(fret)));
+    list = frets.map((fret) => Math.trunc(Number(fret)));
   }
-
-  if (frets.some((fret) => fret < 0)) {
+  if (list.some((fret) => fret < 0)) {
     throw new DeckConfigError('Fret numbers must be >= 0.');
   }
+  return list;
+}
 
-  const noteFilter = buildNoteFilter(deck.notes_to_learn ?? deck.notes);
-
+function generateTargets(
+  openStringMidi: Record<number, number>,
+  labels: Record<number, string>,
+  strings: number[],
+  frets: number[],
+  noteFilter: NoteFilter,
+): FretboardTarget[] {
   const targets: FretboardTarget[] = [];
   for (const stringNumber of strings) {
-    const openMidi = STANDARD_TUNING_MIDI[stringNumber];
+    const openMidi = openStringMidi[stringNumber];
     for (const fret of frets) {
       const midiNote = openMidi + fret;
       const noteName = midiToName(midiNote);
@@ -188,7 +172,7 @@ export function buildTargets(deck: DeckConfig): FretboardTarget[] {
         key: `s${stringNumber}_f${String(fret).padStart(2, '0')}`,
         cardId: stringNumber * 1000 + fret,
         stringNumber,
-        stringLabel: STRING_LABELS[stringNumber],
+        stringLabel: labels[stringNumber] ?? `string ${stringNumber}`,
         fret,
         midiNote,
         noteName,
@@ -196,8 +180,107 @@ export function buildTargets(deck: DeckConfig): FretboardTarget[] {
       });
     }
   }
-
   return targets;
+}
+
+function isTuningDef(value: DeckConfig | TuningDef): value is TuningDef {
+  return (
+    typeof value === 'object' &&
+    value !== null &&
+    'openStringMidi' in value &&
+    'instrumentId' in value &&
+    'id' in value
+  );
+}
+
+/**
+ * Build schedulable fretboard targets.
+ *
+ *   buildTargets(deckConfig)              — Python config.json path (EADGBE only)
+ *   buildTargets(tuningDef, options?)     — generalized path: iterates however
+ *                                           many strings the tuning has
+ *
+ * Fret range passed here is the generated set. Queue-time filtering (active
+ * strings / default-vs-max range) happens in the session layer so it never
+ * becomes part of deckId.
+ */
+export function buildTargets(deck: DeckConfig): FretboardTarget[];
+export function buildTargets(tuning: TuningDef, options?: TargetBuildOptions): FretboardTarget[];
+export function buildTargets(
+  deckOrTuning: DeckConfig | TuningDef,
+  options: TargetBuildOptions = {},
+): FretboardTarget[] {
+  if (isTuningDef(deckOrTuning)) {
+    const tuning = deckOrTuning;
+    const openStringMidi = tuning.openStringMidi;
+    const available = Object.keys(openStringMidi)
+      .map(Number)
+      .sort((a, b) => b - a);
+    const rawStrings = options.strings ?? available;
+    const strings = rawStrings.map((stringNumber) => Math.trunc(Number(stringNumber)));
+    const unknownStrings = [...new Set(strings)]
+      .filter((stringNumber) => !(stringNumber in openStringMidi))
+      .sort((a, b) => a - b);
+    if (unknownStrings.length > 0) {
+      throw new DeckConfigError(
+        `Unsupported strings for tuning ${tuning.id}: [${unknownStrings.join(', ')}]`,
+      );
+    }
+    const frets = resolveFretList(
+      options.frets,
+      Math.trunc(Number(options.minFret ?? 0)),
+      Math.trunc(Number(options.maxFret ?? 12)),
+    );
+    const noteFilter = buildNoteFilter(options.notesToLearn ?? options.notes);
+    return generateTargets(openStringMidi, stringLabelsFor(tuning), strings, frets, noteFilter);
+  }
+
+  const deck = deckOrTuning;
+  const tuningName = String(deck.tuning ?? 'EADGBE')
+    .toUpperCase()
+    .replace(/-/g, '_');
+  if (!SUPPORTED_TUNINGS.has(tuningName)) {
+    throw new DeckConfigError(
+      'Only standard 6-string EADGBE tuning is supported right now.',
+    );
+  }
+
+  const rawStrings = deck.strings ?? [6, 5, 4, 3, 2, 1];
+  const strings = rawStrings.map((stringNumber) => Math.trunc(Number(stringNumber)));
+  const unknownStrings = [...new Set(strings)]
+    .filter((stringNumber) => !(stringNumber in STANDARD_TUNING_MIDI))
+    .sort((a, b) => a - b);
+  if (unknownStrings.length > 0) {
+    throw new DeckConfigError(
+      `Unsupported guitar strings in config.json: [${unknownStrings.join(', ')}]`,
+    );
+  }
+
+  const frets = resolveFretList(
+    deck.frets,
+    Math.trunc(Number(deck.min_fret ?? 0)),
+    Math.trunc(Number(deck.max_fret ?? 12)),
+  );
+  const noteFilter = buildNoteFilter(deck.notes_to_learn ?? deck.notes);
+  return generateTargets(STANDARD_TUNING_MIDI, STRING_LABELS, strings, frets, noteFilter);
+}
+
+/** Filter already-built targets to a fret window without changing deckId. */
+export function filterTargetsByFretRange(
+  targets: FretboardTarget[],
+  minFret: number,
+  maxFret: number,
+): FretboardTarget[] {
+  return targets.filter((target) => target.fret >= minFret && target.fret <= maxFret);
+}
+
+/** Filter already-built targets to the active strings of the current deck. */
+export function filterTargetsByStrings(
+  targets: FretboardTarget[],
+  activeStrings: ReadonlySet<number> | readonly number[],
+): FretboardTarget[] {
+  const allowed = activeStrings instanceof Set ? activeStrings : new Set(activeStrings);
+  return targets.filter((target) => allowed.has(target.stringNumber));
 }
 
 /**

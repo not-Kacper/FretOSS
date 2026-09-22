@@ -1,25 +1,24 @@
 /**
  * storage/sync.ts — cross-device progress sync against the Pages Function.
  *
- *   GET /api/progress?uid=xxx  -> pull the last synced progress.json blob
- *   PUT /api/progress?uid=xxx  -> upsert the blob into D1
+ *   GET /api/progress?deck_id=xxx   + header X-User-Token
+ *   PUT /api/progress?deck_id=xxx   + header X-User-Token
  *
- * `uid` is a client-generated anonymous UUID kept in localStorage (no auth, by
- * design — this is convenience sync, not security).
- *
- * The Python app had no equivalent (it wrote progress.json locally); this adds
- * exactly the two operations main.py's persistence needs to survive a device
- * switch:
+ * The token is a 256-bit random secret (src/storage/identity.ts), sent as a
+ * header so it does not leak into server/proxy access logs via the URL.
+ * deck_id is a non-secret query param so each tuning has its own D1 row.
  *
  *   - `pull()` on first load: a client with an empty IndexedDB (fresh browser or
- *     "hard clear") adopts the last server-synced state.
- *   - `push()`: debounced PUT after local changes (Python's `save()` equivalent,
- *     coalesced so a busy review session does not hammer the endpoint).
+ *     "hard clear") adopts the last server-synced state for this deck.
+ *   - `push()`: debounced PUT after local changes, coalesced so a busy review
+ *     session does not hammer the endpoint.
  */
 
 import type { ProgressFile } from '../srs/types';
+import { DEFAULT_DECK_ID } from './progress-idb';
+import { getOrCreateUserId } from './identity';
 
-const UID_STORAGE_KEY = 'srs-fretboard.uid';
+export const USER_TOKEN_HEADER = 'X-User-Token';
 
 export type SyncStatus = 'idle' | 'syncing' | 'synced' | 'offline' | 'error';
 
@@ -29,33 +28,14 @@ export interface SyncState {
   message: string | null;
 }
 
-/** Stable for the life of the page when localStorage is unavailable. */
-let fallbackUid: string | null = null;
-
-function newUid(): string {
-  return typeof crypto !== 'undefined' && 'randomUUID' in crypto
-    ? crypto.randomUUID()
-    : `uid-${Date.now()}-${Math.random().toString(16).slice(2)}`;
-}
-
-/** Anonymous per-browser id (Python had no counterpart: progress.json was local). */
+/** @deprecated Use getOrCreateUserId from identity.ts. Kept as a thin alias. */
 export function getUserId(): string {
-  try {
-    const existing = localStorage.getItem(UID_STORAGE_KEY);
-    if (existing) return existing;
-    const uid = newUid();
-    localStorage.setItem(UID_STORAGE_KEY, uid);
-    return uid;
-  } catch {
-    // Storage blocked: fall back to a per-session id (sync becomes ephemeral,
-    // but it must at least stay constant for this page).
-    fallbackUid ??= `session-${newUid()}`;
-    return fallbackUid;
-  }
+  return getOrCreateUserId();
 }
 
 export interface ProgressSyncOptions {
   uid?: string;
+  deckId?: string;
   /** Coalescing window for pushes. */
   debounceMs?: number;
   /** Injectable for tests. */
@@ -74,6 +54,7 @@ export interface ProgressSync {
   getState: () => SyncState;
   subscribe: (listener: (state: SyncState) => void) => () => void;
   dispose: () => void;
+  readonly deckId: string;
 }
 
 function readErrorMessage(error: unknown): string {
@@ -82,10 +63,15 @@ function readErrorMessage(error: unknown): string {
 }
 
 export function createProgressSync(options: ProgressSyncOptions = {}): ProgressSync {
-  const uid = options.uid ?? getUserId();
+  const uid = options.uid ?? getOrCreateUserId();
+  const deckId = options.deckId ?? DEFAULT_DECK_ID;
   const debounceMs = options.debounceMs ?? 1500;
   const doFetch = options.fetchImpl ?? ((...args: Parameters<typeof fetch>) => fetch(...args));
-  const endpoint = `/api/progress?uid=${encodeURIComponent(uid)}`;
+  const endpoint = `/api/progress?deck_id=${encodeURIComponent(deckId)}`;
+  const headers = (): Record<string, string> => ({
+    'content-type': 'application/json',
+    [USER_TOKEN_HEADER]: uid,
+  });
 
   let state: SyncState = { status: 'idle', lastSyncedAt: null, message: null };
   let timer: ReturnType<typeof setTimeout> | null = null;
@@ -104,7 +90,7 @@ export function createProgressSync(options: ProgressSyncOptions = {}): ProgressS
     try {
       const response = await doFetch(endpoint, {
         method: 'PUT',
-        headers: { 'content-type': 'application/json' },
+        headers: headers(),
         body: JSON.stringify(file),
       });
       if (!response.ok) {
@@ -139,10 +125,12 @@ export function createProgressSync(options: ProgressSyncOptions = {}): ProgressS
   };
 
   return {
+    deckId,
+
     pull: async () => {
       setState({ status: 'syncing', message: null });
       try {
-        const response = await doFetch(endpoint, { method: 'GET' });
+        const response = await doFetch(endpoint, { method: 'GET', headers: headers() });
         if (response.status === 404) {
           setState({ status: 'synced', lastSyncedAt: new Date().toISOString(), message: null });
           return null;

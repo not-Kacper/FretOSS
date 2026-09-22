@@ -2,7 +2,10 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
 import App from './App';
+import { applyTheme, loadSettings } from './storage/settings';
 import './styles.css';
+
+applyTheme(loadSettings().theme);
 
 const container = document.getElementById('root');
 if (!container) {

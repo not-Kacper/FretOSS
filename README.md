@@ -25,7 +25,7 @@ mic ──▶ AudioWorklet (YIN) ──▶ 3 gates ──▶ session loop ──
 | Scheduling | [`ts-fsrs`](https://github.com/open-spaced-repetition/ts-fsrs) (FSRS-6) | JS counterpart of the Python app's `py-fsrs` |
 | Local persistence | IndexedDB (`idb`-free, hand-rolled wrapper) | the browser's `progress.json` |
 | Hosting | Cloudflare Pages | static `dist/` |
-| Sync API | Pages Function `functions/api/progress.ts` + D1 | optional, anonymous uid |
+| Sync API | Pages Function `functions/api/progress.ts` + D1 | optional, anonymous 256-bit token |
 
 No Next.js, no router, no state-management library: the Python app had exactly
 one screen and a few pieces of state, and the web version keeps that shape.
@@ -199,27 +199,30 @@ py-fsrs:
 
 ## Storage
 
-IndexedDB database `srs-fretboard` (version 1):
+IndexedDB database `srs-fretboard` (version 2):
 
 | Store | Key | Content |
 | --- | --- | --- |
-| `cards` | `target.key` (`s6_f00`, …) | one `CardRecord`: target dict + FSRS card + points/attempts/correct/wrong/prompt_count/timestamps/reviews |
-| `meta` | `key` | the `scheduler` block, `version`, `created_at`, `updated_at` |
+| `cardRecords` | `${deckId}::${target.key}` | one `CardRecord` plus `deck_id`; v1 `cards` rows are migrated once onto `guitar6-standard` |
+| `meta` | `${deckId}::version` etc. | per-deck scheduler header |
 
-`toProgressFile()` produces exactly the Python `progress.json` shape
-(`{ version, created_at, updated_at, scheduler, cards }`), which is what gets
-PUT to D1 — so progress can be moved between the Python app and the web app in
-either direction.
+`deckId` is the tuning id (presets already encode instrument + tuning). Fret
+range is a queue/view filter and is **not** part of the id, so extending 0–12
+to 0–24 never discards out-of-range progress.
+
+`toProgressFile()` still produces the Python `progress.json` shape for **one**
+deck. Settings → Export writes every deck plus the anonymous token to
+`srs-fretboard-backup-YYYY-MM-DD.json`.
 
 Sync endpoints (`functions/api/progress.ts`):
 
 ```
-GET /api/progress?uid=<uuid>   -> 200 blob | 404 when nothing stored
-PUT /api/progress?uid=<uuid>   -> upsert { data, updated_at }
+GET /api/progress?deck_id=<id>   + header X-User-Token  -> 200 blob | 404
+PUT /api/progress?deck_id=<id>   + header X-User-Token  -> upsert
 ```
 
-No auth: `uid` is an anonymous UUID in localStorage, used for convenience
-sync, not security.
+No passwords or accounts: `X-User-Token` is a 256-bit `crypto.getRandomValues()`
+secret kept in localStorage. D1 primary key is `(user_token, deck_id)`.
 
 ## Tests
 

@@ -382,6 +382,135 @@ describe('local-first persistence (IndexedDB)', () => {
   });
 });
 
+describe('deck namespacing', () => {
+  it('keeps guitar-standard and ukulele progress in separate partitions', async () => {
+    const dbName = nextDbName();
+    const guitarTargets = buildTargets({ strings: [6, 5], min_fret: 0, max_fret: 1 });
+    const ukeTuning = {
+      id: 'ukulele4-standard',
+      label: 'Standard (GCEA)',
+      instrumentId: 'ukulele4',
+      openStringMidi: { 4: 67, 3: 60, 2: 64, 1: 69 },
+    };
+    const ukeTargets = buildTargets(ukeTuning, { minFret: 0, maxFret: 1 });
+
+    const guitar = await ProgressStore.load(buildFixtureScheduler(), guitarTargets, {
+      dbName,
+      deckId: 'guitar6-standard',
+      now: () => new Date(fixture.session_start),
+    });
+    const gTarget = guitarTargets[0];
+    await guitar.review(gTarget, Rating.Easy, new Date(fixture.session_start), 400, gTarget.midiNote);
+    const guitarPoints = guitar.statsFor(gTarget).points;
+    expect(guitarPoints).toBeGreaterThan(0);
+    guitar.close();
+
+    const uke = await ProgressStore.load(buildFixtureScheduler(), ukeTargets, {
+      dbName,
+      deckId: 'ukulele4-standard',
+      now: () => new Date(fixture.session_start),
+    });
+    expect(uke.targets).toHaveLength(ukeTargets.length);
+    expect(uke.targets[0].stringNumber).toBeLessThanOrEqual(4);
+    const uTarget = ukeTargets[0];
+    expect(uke.isNew(uTarget)).toBe(true);
+    expect(uke.statsFor(uTarget).points).toBe(0);
+    uke.close();
+
+    const guitarAgain = await ProgressStore.load(buildFixtureScheduler(), guitarTargets, {
+      dbName,
+      deckId: 'guitar6-standard',
+      now: () => new Date(fixture.session_start),
+    });
+    expect(guitarAgain.statsFor(gTarget).points).toBe(guitarPoints);
+    guitarAgain.close();
+  });
+
+  it('does not discard out-of-range fret progress when the view shrinks', async () => {
+    const dbName = nextDbName();
+    const wide = buildTargets({ min_fret: 0, max_fret: 15, strings: [6] });
+    const store = await ProgressStore.load(buildFixtureScheduler(), wide, {
+      dbName,
+      deckId: 'guitar6-standard',
+      now: () => new Date(fixture.session_start),
+    });
+    const high = wide.find((target) => target.fret === 15)!;
+    await store.review(high, Rating.Good, new Date(fixture.session_start), 800, high.midiNote);
+    const points = store.statsFor(high).points;
+
+    const narrow = wide.filter((target) => target.fret <= 12);
+    await store.setTargets(narrow);
+    expect(store.targets.every((target) => target.fret <= 12)).toBe(true);
+    expect(store.recordFor(high).points).toBe(points);
+
+    await store.setTargets(wide);
+    expect(store.statsFor(high).points).toBe(points);
+    store.close();
+  });
+
+  it('migrates unnamespaced v1 IndexedDB cards onto guitar6-standard', async () => {
+    const dbName = nextDbName();
+    const target = buildTargets({ strings: [6], frets: [0] })[0];
+    await new Promise<void>((resolve, reject) => {
+      const request = indexedDB.open(dbName, 1);
+      request.onupgradeneeded = () => {
+        const db = request.result;
+        db.createObjectStore('cards', { keyPath: 'target.key' });
+        db.createObjectStore('meta');
+      };
+      request.onerror = () => reject(request.error ?? new Error('open v1 failed'));
+      request.onsuccess = () => {
+        const db = request.result;
+        const tx = db.transaction(['cards', 'meta'], 'readwrite');
+        tx.objectStore('cards').put({
+          target: {
+            key: target.key,
+            card_id: target.cardId,
+            string: target.stringNumber,
+            string_label: target.stringLabel,
+            fret: target.fret,
+            midi_note: target.midiNote,
+            note_name: target.noteName,
+            pitch_class: target.pitchClass,
+          },
+          card: {
+            card_id: target.cardId,
+            state: 2,
+            step: null,
+            stability: 2.5,
+            difficulty: 5,
+            due: '2026-01-02T00:00:00.000Z',
+            last_review: '2026-01-01T00:00:00.000Z',
+          },
+          points: 6,
+          attempts: 2,
+          correct: 2,
+          wrong: 0,
+          prompt_count: 2,
+          last_prompted_at: '2026-01-01T00:00:00.000Z',
+          last_reviewed_at: '2026-01-01T00:00:00.000Z',
+          reviews: [],
+        });
+        tx.objectStore('meta').put(1, 'version');
+        tx.oncomplete = () => {
+          db.close();
+          resolve();
+        };
+        tx.onerror = () => reject(tx.error ?? new Error('v1 write failed'));
+      };
+    });
+
+    const store = await ProgressStore.load(buildFixtureScheduler(), [target], {
+      dbName,
+      deckId: 'guitar6-standard',
+    });
+    expect(store.statsFor(target).points).toBe(6);
+    expect(store.statsFor(target).attempts).toBe(2);
+    expect(store.cardFor(target).state).toBe(2);
+    store.close();
+  });
+});
+
 describe('queue helpers', () => {
   it('pickCandidate prefers candidates that were not just shown', () => {
     const make = (key: string): QueueCandidate =>

@@ -34,6 +34,8 @@ export interface UseAudioOptions {
    * value), i.e. the session's scoring input.
    */
   onNoteEvent?: (event: NoteEvent) => void;
+  /** Linear gain 0–3 applied before pitch detection. Default 1. */
+  inputGain?: number;
 }
 
 export interface UseAudioResult {
@@ -54,7 +56,7 @@ export interface UseAudioResult {
   resetStreak: () => void;
 }
 
-export function useAudio({ config, onNoteEvent }: UseAudioOptions): UseAudioResult {
+export function useAudio({ config, onNoteEvent, inputGain = 1 }: UseAudioOptions): UseAudioResult {
   const [detectedNote, setDetectedNote] = useState<NoteEvent | null>(null);
   const [dbLevel, setDbLevel] = useState(-96);
   const [isListening, setIsListening] = useState(false);
@@ -73,9 +75,11 @@ export function useAudio({ config, onNoteEvent }: UseAudioOptions): UseAudioResu
   const configRef = useRef(config);
   const deviceIdRef = useRef(deviceId);
   const listeningRef = useRef(false);
+  const gainRef = useRef(inputGain);
 
   configRef.current = config;
   noteHandlerRef.current = onNoteEvent;
+  gainRef.current = inputGain;
 
   const setListening = useCallback((value: boolean) => {
     listeningRef.current = value;
@@ -180,6 +184,10 @@ export function useAudio({ config, onNoteEvent }: UseAudioOptions): UseAudioResu
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [deviceId]);
+
+  useEffect(() => {
+    handleRef.current?.setInputGain(inputGain);
+  }, [inputGain]);
 
   useEffect(() => {
     void refreshDevices();
