@@ -1,0 +1,2276 @@
+{
+  "generated_by": "tools/gen_store_fixture.py",
+  "reference": "main.py ProgressStore (fsrs==6.3.1, fuzzing disabled)",
+  "config": {
+    "srs": {
+      "progress_path": "progress.json",
+      "desired_retention": 0.9,
+      "learning_steps_minutes": [
+        1,
+        10
+      ],
+      "relearning_steps_minutes": [
+        10
+      ],
+      "maximum_interval_days": 36500,
+      "enable_fuzzing": false,
+      "initial_new_cards": 3,
+      "new_card_interval_sec": 45.0,
+      "random_candidate_window": 8,
+      "easy_threshold_sec": 2.0,
+      "hard_threshold_sec": 6.0,
+      "wrong_repeat_cooldown_sec": 1.5,
+      "success_pause_sec": 0.8
+    },
+    "deck": {
+      "tuning": "EADGBE",
+      "strings": [
+        6,
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "min_fret": 0,
+      "max_fret": 12,
+      "notes_to_learn": [
+        "C",
+        "C#",
+        "D",
+        "D#",
+        "E",
+        "F",
+        "F#",
+        "G",
+        "G#",
+        "A",
+        "A#",
+        "B"
+      ]
+    },
+    "random_candidate_window": 8,
+    "initial_new_cards": 3,
+    "new_card_interval_sec": 45.0
+  },
+  "session_start": "2026-02-01T20:00:00+00:00",
+  "queue_now": "2026-02-03T21:00:00+00:00",
+  "prompted": [
+    {
+      "key": "s6_f00",
+      "at": "2026-02-01T20:00:00+00:00"
+    },
+    {
+      "key": "s5_f02",
+      "at": "2026-02-01T20:20:00+00:00"
+    },
+    {
+      "key": "s4_f05",
+      "at": "2026-02-01T20:25:00+00:00"
+    },
+    {
+      "key": "s3_f07",
+      "at": "2026-02-01T20:26:00+00:00"
+    },
+    {
+      "key": "s2_f09",
+      "at": "2026-02-01T20:27:00+00:00"
+    },
+    {
+      "key": "s1_f03",
+      "at": "2026-02-01T20:31:00+00:00"
+    },
+    {
+      "key": "s6_f01",
+      "at": "2026-02-01T20:36:00+00:00"
+    }
+  ],
+  "script": [
+    {
+      "key": "s6_f00",
+      "rating": "Good",
+      "at": "2026-02-01T20:00:00+00:00",
+      "duration_ms": 4210,
+      "detected_midi": 40
+    },
+    {
+      "key": "s6_f00",
+      "rating": "Hard",
+      "at": "2026-02-01T20:15:00+00:00",
+      "duration_ms": 6100,
+      "detected_midi": 41
+    },
+    {
+      "key": "s5_f02",
+      "rating": "Again",
+      "at": "2026-02-01T20:20:00+00:00",
+      "duration_ms": 1200,
+      "detected_midi": 44
+    },
+    {
+      "key": "s5_f02",
+      "rating": "Again",
+      "at": "2026-02-01T20:30:00+00:00",
+      "duration_ms": 900,
+      "detected_midi": 42
+    },
+    {
+      "key": "s4_f05",
+      "rating": "Easy",
+      "at": "2026-02-01T20:25:00+00:00",
+      "duration_ms": 1500,
+      "detected_midi": 50
+    },
+    {
+      "key": "s3_f07",
+      "rating": "Hard",
+      "at": "2026-02-01T20:26:00+00:00",
+      "duration_ms": 5400,
+      "detected_midi": 54
+    },
+    {
+      "key": "s2_f09",
+      "rating": "Again",
+      "at": "2026-02-01T20:27:00+00:00",
+      "duration_ms": 800,
+      "detected_midi": 61
+    },
+    {
+      "key": "s2_f09",
+      "rating": "Good",
+      "at": "2026-02-01T20:29:00+00:00",
+      "duration_ms": 1300,
+      "detected_midi": 64
+    },
+    {
+      "key": "s1_f03",
+      "rating": "Good",
+      "at": "2026-02-01T20:31:00+00:00",
+      "duration_ms": 1900,
+      "detected_midi": 67
+    },
+    {
+      "key": "s1_f03",
+      "rating": "Good",
+      "at": "2026-02-01T20:34:00+00:00",
+      "duration_ms": 1400,
+      "detected_midi": 68
+    },
+    {
+      "key": "s6_f01",
+      "rating": "Good",
+      "at": "2026-02-01T20:36:00+00:00",
+      "duration_ms": 1100,
+      "detected_midi": 41
+    },
+    {
+      "key": "s6_f01",
+      "rating": "Easy",
+      "at": "2026-02-01T20:40:00+00:00",
+      "duration_ms": 700,
+      "detected_midi": 41
+    }
+  ],
+  "expected": {
+    "records": {
+      "s1_f03": {
+        "card": {
+          "card_id": 1003,
+          "state": 2,
+          "step": null,
+          "stability": 2.3065,
+          "difficulty": 2.111214235785395,
+          "due": "2026-02-03T20:34:00+00:00",
+          "last_review": "2026-02-01T20:34:00+00:00"
+        },
+        "points": 4,
+        "attempts": 2,
+        "correct": 2,
+        "wrong": 0,
+        "prompt_count": 1,
+        "last_prompted_at": "2026-02-01T20:31:00+00:00",
+        "last_reviewed_at": "2026-02-01T20:34:00+00:00",
+        "review_count": 2,
+        "reviews": [
+          {
+            "card_id": 1003,
+            "rating": 3,
+            "review_datetime": "2026-02-01T20:31:00+00:00",
+            "review_duration": 1900,
+            "target_key": "s1_f03",
+            "detected_midi_note": 67,
+            "detected_note_name": "G4"
+          },
+          {
+            "card_id": 1003,
+            "rating": 3,
+            "review_datetime": "2026-02-01T20:34:00+00:00",
+            "review_duration": 1400,
+            "target_key": "s1_f03",
+            "detected_midi_note": 68,
+            "detected_note_name": "G#4"
+          }
+        ]
+      },
+      "s2_f09": {
+        "card": {
+          "card_id": 2009,
+          "state": 1,
+          "step": 1,
+          "stability": 0.24668918777567272,
+          "difficulty": 6.402115069296838,
+          "due": "2026-02-01T20:39:00+00:00",
+          "last_review": "2026-02-01T20:29:00+00:00"
+        },
+        "points": 1,
+        "attempts": 2,
+        "correct": 1,
+        "wrong": 1,
+        "prompt_count": 1,
+        "last_prompted_at": "2026-02-01T20:27:00+00:00",
+        "last_reviewed_at": "2026-02-01T20:29:00+00:00",
+        "review_count": 2,
+        "reviews": [
+          {
+            "card_id": 2009,
+            "rating": 1,
+            "review_datetime": "2026-02-01T20:27:00+00:00",
+            "review_duration": 800,
+            "target_key": "s2_f09",
+            "detected_midi_note": 61,
+            "detected_note_name": "C#4"
+          },
+          {
+            "card_id": 2009,
+            "rating": 3,
+            "review_datetime": "2026-02-01T20:29:00+00:00",
+            "review_duration": 1300,
+            "target_key": "s2_f09",
+            "detected_midi_note": 64,
+            "detected_note_name": "E4"
+          }
+        ]
+      },
+      "s3_f07": {
+        "card": {
+          "card_id": 3007,
+          "state": 1,
+          "step": 0,
+          "stability": 1.2931,
+          "difficulty": 5.112170705601056,
+          "due": "2026-02-01T20:31:30+00:00",
+          "last_review": "2026-02-01T20:26:00+00:00"
+        },
+        "points": 1,
+        "attempts": 1,
+        "correct": 1,
+        "wrong": 0,
+        "prompt_count": 1,
+        "last_prompted_at": "2026-02-01T20:26:00+00:00",
+        "last_reviewed_at": "2026-02-01T20:26:00+00:00",
+        "review_count": 1,
+        "reviews": [
+          {
+            "card_id": 3007,
+            "rating": 2,
+            "review_datetime": "2026-02-01T20:26:00+00:00",
+            "review_duration": 5400,
+            "target_key": "s3_f07",
+            "detected_midi_note": 54,
+            "detected_note_name": "F#3"
+          }
+        ]
+      },
+      "s4_f05": {
+        "card": {
+          "card_id": 4005,
+          "state": 2,
+          "step": null,
+          "stability": 8.2956,
+          "difficulty": 1.0,
+          "due": "2026-02-09T20:25:00+00:00",
+          "last_review": "2026-02-01T20:25:00+00:00"
+        },
+        "points": 3,
+        "attempts": 1,
+        "correct": 1,
+        "wrong": 0,
+        "prompt_count": 1,
+        "last_prompted_at": "2026-02-01T20:25:00+00:00",
+        "last_reviewed_at": "2026-02-01T20:25:00+00:00",
+        "review_count": 1,
+        "reviews": [
+          {
+            "card_id": 4005,
+            "rating": 4,
+            "review_datetime": "2026-02-01T20:25:00+00:00",
+            "review_duration": 1500,
+            "target_key": "s4_f05",
+            "detected_midi_note": 50,
+            "detected_note_name": "D3"
+          }
+        ]
+      },
+      "s5_f02": {
+        "card": {
+          "card_id": 5002,
+          "state": 1,
+          "step": 0,
+          "stability": 0.08335671711031604,
+          "difficulty": 8.806304468856837,
+          "due": "2026-02-01T20:31:00+00:00",
+          "last_review": "2026-02-01T20:30:00+00:00"
+        },
+        "points": -2,
+        "attempts": 2,
+        "correct": 0,
+        "wrong": 2,
+        "prompt_count": 1,
+        "last_prompted_at": "2026-02-01T20:20:00+00:00",
+        "last_reviewed_at": "2026-02-01T20:30:00+00:00",
+        "review_count": 2,
+        "reviews": [
+          {
+            "card_id": 5002,
+            "rating": 1,
+            "review_datetime": "2026-02-01T20:20:00+00:00",
+            "review_duration": 1200,
+            "target_key": "s5_f02",
+            "detected_midi_note": 44,
+            "detected_note_name": "G#2"
+          },
+          {
+            "card_id": 5002,
+            "rating": 1,
+            "review_datetime": "2026-02-01T20:30:00+00:00",
+            "review_duration": 900,
+            "target_key": "s5_f02",
+            "detected_midi_note": 42,
+            "detected_note_name": "F#2"
+          }
+        ]
+      },
+      "s6_f00": {
+        "card": {
+          "card_id": 6000,
+          "state": 1,
+          "step": 1,
+          "stability": 1.3333787168039835,
+          "difficulty": 4.752858488532557,
+          "due": "2026-02-01T20:25:00+00:00",
+          "last_review": "2026-02-01T20:15:00+00:00"
+        },
+        "points": 3,
+        "attempts": 2,
+        "correct": 2,
+        "wrong": 0,
+        "prompt_count": 1,
+        "last_prompted_at": "2026-02-01T20:00:00+00:00",
+        "last_reviewed_at": "2026-02-01T20:15:00+00:00",
+        "review_count": 2,
+        "reviews": [
+          {
+            "card_id": 6000,
+            "rating": 3,
+            "review_datetime": "2026-02-01T20:00:00+00:00",
+            "review_duration": 4210,
+            "target_key": "s6_f00",
+            "detected_midi_note": 40,
+            "detected_note_name": "E2"
+          },
+          {
+            "card_id": 6000,
+            "rating": 2,
+            "review_datetime": "2026-02-01T20:15:00+00:00",
+            "review_duration": 6100,
+            "target_key": "s6_f00",
+            "detected_midi_note": 41,
+            "detected_note_name": "F2"
+          }
+        ]
+      },
+      "s6_f01": {
+        "card": {
+          "card_id": 6001,
+          "state": 2,
+          "step": null,
+          "stability": 3.946054067969477,
+          "difficulty": 1.0,
+          "due": "2026-02-05T20:40:00+00:00",
+          "last_review": "2026-02-01T20:40:00+00:00"
+        },
+        "points": 5,
+        "attempts": 2,
+        "correct": 2,
+        "wrong": 0,
+        "prompt_count": 1,
+        "last_prompted_at": "2026-02-01T20:36:00+00:00",
+        "last_reviewed_at": "2026-02-01T20:40:00+00:00",
+        "review_count": 2,
+        "reviews": [
+          {
+            "card_id": 6001,
+            "rating": 3,
+            "review_datetime": "2026-02-01T20:36:00+00:00",
+            "review_duration": 1100,
+            "target_key": "s6_f01",
+            "detected_midi_note": 41,
+            "detected_note_name": "F2"
+          },
+          {
+            "card_id": 6001,
+            "rating": 4,
+            "review_datetime": "2026-02-01T20:40:00+00:00",
+            "review_duration": 700,
+            "target_key": "s6_f01",
+            "detected_midi_note": 41,
+            "detected_note_name": "F2"
+          }
+        ]
+      }
+    },
+    "all_cards": {
+      "s6_f00": {
+        "card": {
+          "card_id": 6000,
+          "state": 1,
+          "step": 1,
+          "stability": 1.3333787168039835,
+          "difficulty": 4.752858488532557,
+          "due": "2026-02-01T20:25:00+00:00",
+          "last_review": "2026-02-01T20:15:00+00:00"
+        },
+        "points": 3,
+        "attempts": 2,
+        "correct": 2,
+        "wrong": 0,
+        "prompt_count": 1,
+        "last_prompted_at": "2026-02-01T20:00:00+00:00",
+        "last_reviewed_at": "2026-02-01T20:15:00+00:00",
+        "review_count": 2,
+        "reviews": [
+          {
+            "card_id": 6000,
+            "rating": 3,
+            "review_datetime": "2026-02-01T20:00:00+00:00",
+            "review_duration": 4210,
+            "target_key": "s6_f00",
+            "detected_midi_note": 40,
+            "detected_note_name": "E2"
+          },
+          {
+            "card_id": 6000,
+            "rating": 2,
+            "review_datetime": "2026-02-01T20:15:00+00:00",
+            "review_duration": 6100,
+            "target_key": "s6_f00",
+            "detected_midi_note": 41,
+            "detected_note_name": "F2"
+          }
+        ]
+      },
+      "s6_f01": {
+        "card": {
+          "card_id": 6001,
+          "state": 2,
+          "step": null,
+          "stability": 3.946054067969477,
+          "difficulty": 1.0,
+          "due": "2026-02-05T20:40:00+00:00",
+          "last_review": "2026-02-01T20:40:00+00:00"
+        },
+        "points": 5,
+        "attempts": 2,
+        "correct": 2,
+        "wrong": 0,
+        "prompt_count": 1,
+        "last_prompted_at": "2026-02-01T20:36:00+00:00",
+        "last_reviewed_at": "2026-02-01T20:40:00+00:00",
+        "review_count": 2,
+        "reviews": [
+          {
+            "card_id": 6001,
+            "rating": 3,
+            "review_datetime": "2026-02-01T20:36:00+00:00",
+            "review_duration": 1100,
+            "target_key": "s6_f01",
+            "detected_midi_note": 41,
+            "detected_note_name": "F2"
+          },
+          {
+            "card_id": 6001,
+            "rating": 4,
+            "review_datetime": "2026-02-01T20:40:00+00:00",
+            "review_duration": 700,
+            "target_key": "s6_f01",
+            "detected_midi_note": 41,
+            "detected_note_name": "F2"
+          }
+        ]
+      },
+      "s6_f02": {
+        "card": {
+          "card_id": 6002,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s6_f03": {
+        "card": {
+          "card_id": 6003,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s6_f04": {
+        "card": {
+          "card_id": 6004,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s6_f05": {
+        "card": {
+          "card_id": 6005,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s6_f06": {
+        "card": {
+          "card_id": 6006,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s6_f07": {
+        "card": {
+          "card_id": 6007,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s6_f08": {
+        "card": {
+          "card_id": 6008,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s6_f09": {
+        "card": {
+          "card_id": 6009,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s6_f10": {
+        "card": {
+          "card_id": 6010,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s6_f11": {
+        "card": {
+          "card_id": 6011,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s6_f12": {
+        "card": {
+          "card_id": 6012,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s5_f00": {
+        "card": {
+          "card_id": 5000,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s5_f01": {
+        "card": {
+          "card_id": 5001,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s5_f02": {
+        "card": {
+          "card_id": 5002,
+          "state": 1,
+          "step": 0,
+          "stability": 0.08335671711031604,
+          "difficulty": 8.806304468856837,
+          "due": "2026-02-01T20:31:00+00:00",
+          "last_review": "2026-02-01T20:30:00+00:00"
+        },
+        "points": -2,
+        "attempts": 2,
+        "correct": 0,
+        "wrong": 2,
+        "prompt_count": 1,
+        "last_prompted_at": "2026-02-01T20:20:00+00:00",
+        "last_reviewed_at": "2026-02-01T20:30:00+00:00",
+        "review_count": 2,
+        "reviews": [
+          {
+            "card_id": 5002,
+            "rating": 1,
+            "review_datetime": "2026-02-01T20:20:00+00:00",
+            "review_duration": 1200,
+            "target_key": "s5_f02",
+            "detected_midi_note": 44,
+            "detected_note_name": "G#2"
+          },
+          {
+            "card_id": 5002,
+            "rating": 1,
+            "review_datetime": "2026-02-01T20:30:00+00:00",
+            "review_duration": 900,
+            "target_key": "s5_f02",
+            "detected_midi_note": 42,
+            "detected_note_name": "F#2"
+          }
+        ]
+      },
+      "s5_f03": {
+        "card": {
+          "card_id": 5003,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s5_f04": {
+        "card": {
+          "card_id": 5004,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s5_f05": {
+        "card": {
+          "card_id": 5005,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s5_f06": {
+        "card": {
+          "card_id": 5006,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s5_f07": {
+        "card": {
+          "card_id": 5007,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s5_f08": {
+        "card": {
+          "card_id": 5008,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s5_f09": {
+        "card": {
+          "card_id": 5009,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s5_f10": {
+        "card": {
+          "card_id": 5010,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s5_f11": {
+        "card": {
+          "card_id": 5011,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s5_f12": {
+        "card": {
+          "card_id": 5012,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s4_f00": {
+        "card": {
+          "card_id": 4000,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s4_f01": {
+        "card": {
+          "card_id": 4001,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s4_f02": {
+        "card": {
+          "card_id": 4002,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s4_f03": {
+        "card": {
+          "card_id": 4003,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s4_f04": {
+        "card": {
+          "card_id": 4004,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s4_f05": {
+        "card": {
+          "card_id": 4005,
+          "state": 2,
+          "step": null,
+          "stability": 8.2956,
+          "difficulty": 1.0,
+          "due": "2026-02-09T20:25:00+00:00",
+          "last_review": "2026-02-01T20:25:00+00:00"
+        },
+        "points": 3,
+        "attempts": 1,
+        "correct": 1,
+        "wrong": 0,
+        "prompt_count": 1,
+        "last_prompted_at": "2026-02-01T20:25:00+00:00",
+        "last_reviewed_at": "2026-02-01T20:25:00+00:00",
+        "review_count": 1,
+        "reviews": [
+          {
+            "card_id": 4005,
+            "rating": 4,
+            "review_datetime": "2026-02-01T20:25:00+00:00",
+            "review_duration": 1500,
+            "target_key": "s4_f05",
+            "detected_midi_note": 50,
+            "detected_note_name": "D3"
+          }
+        ]
+      },
+      "s4_f06": {
+        "card": {
+          "card_id": 4006,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s4_f07": {
+        "card": {
+          "card_id": 4007,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s4_f08": {
+        "card": {
+          "card_id": 4008,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s4_f09": {
+        "card": {
+          "card_id": 4009,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s4_f10": {
+        "card": {
+          "card_id": 4010,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s4_f11": {
+        "card": {
+          "card_id": 4011,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s4_f12": {
+        "card": {
+          "card_id": 4012,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s3_f00": {
+        "card": {
+          "card_id": 3000,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s3_f01": {
+        "card": {
+          "card_id": 3001,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s3_f02": {
+        "card": {
+          "card_id": 3002,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s3_f03": {
+        "card": {
+          "card_id": 3003,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s3_f04": {
+        "card": {
+          "card_id": 3004,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s3_f05": {
+        "card": {
+          "card_id": 3005,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s3_f06": {
+        "card": {
+          "card_id": 3006,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s3_f07": {
+        "card": {
+          "card_id": 3007,
+          "state": 1,
+          "step": 0,
+          "stability": 1.2931,
+          "difficulty": 5.112170705601056,
+          "due": "2026-02-01T20:31:30+00:00",
+          "last_review": "2026-02-01T20:26:00+00:00"
+        },
+        "points": 1,
+        "attempts": 1,
+        "correct": 1,
+        "wrong": 0,
+        "prompt_count": 1,
+        "last_prompted_at": "2026-02-01T20:26:00+00:00",
+        "last_reviewed_at": "2026-02-01T20:26:00+00:00",
+        "review_count": 1,
+        "reviews": [
+          {
+            "card_id": 3007,
+            "rating": 2,
+            "review_datetime": "2026-02-01T20:26:00+00:00",
+            "review_duration": 5400,
+            "target_key": "s3_f07",
+            "detected_midi_note": 54,
+            "detected_note_name": "F#3"
+          }
+        ]
+      },
+      "s3_f08": {
+        "card": {
+          "card_id": 3008,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s3_f09": {
+        "card": {
+          "card_id": 3009,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s3_f10": {
+        "card": {
+          "card_id": 3010,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s3_f11": {
+        "card": {
+          "card_id": 3011,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s3_f12": {
+        "card": {
+          "card_id": 3012,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s2_f00": {
+        "card": {
+          "card_id": 2000,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s2_f01": {
+        "card": {
+          "card_id": 2001,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s2_f02": {
+        "card": {
+          "card_id": 2002,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s2_f03": {
+        "card": {
+          "card_id": 2003,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s2_f04": {
+        "card": {
+          "card_id": 2004,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s2_f05": {
+        "card": {
+          "card_id": 2005,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s2_f06": {
+        "card": {
+          "card_id": 2006,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s2_f07": {
+        "card": {
+          "card_id": 2007,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s2_f08": {
+        "card": {
+          "card_id": 2008,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s2_f09": {
+        "card": {
+          "card_id": 2009,
+          "state": 1,
+          "step": 1,
+          "stability": 0.24668918777567272,
+          "difficulty": 6.402115069296838,
+          "due": "2026-02-01T20:39:00+00:00",
+          "last_review": "2026-02-01T20:29:00+00:00"
+        },
+        "points": 1,
+        "attempts": 2,
+        "correct": 1,
+        "wrong": 1,
+        "prompt_count": 1,
+        "last_prompted_at": "2026-02-01T20:27:00+00:00",
+        "last_reviewed_at": "2026-02-01T20:29:00+00:00",
+        "review_count": 2,
+        "reviews": [
+          {
+            "card_id": 2009,
+            "rating": 1,
+            "review_datetime": "2026-02-01T20:27:00+00:00",
+            "review_duration": 800,
+            "target_key": "s2_f09",
+            "detected_midi_note": 61,
+            "detected_note_name": "C#4"
+          },
+          {
+            "card_id": 2009,
+            "rating": 3,
+            "review_datetime": "2026-02-01T20:29:00+00:00",
+            "review_duration": 1300,
+            "target_key": "s2_f09",
+            "detected_midi_note": 64,
+            "detected_note_name": "E4"
+          }
+        ]
+      },
+      "s2_f10": {
+        "card": {
+          "card_id": 2010,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s2_f11": {
+        "card": {
+          "card_id": 2011,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s2_f12": {
+        "card": {
+          "card_id": 2012,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s1_f00": {
+        "card": {
+          "card_id": 1000,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s1_f01": {
+        "card": {
+          "card_id": 1001,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s1_f02": {
+        "card": {
+          "card_id": 1002,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s1_f03": {
+        "card": {
+          "card_id": 1003,
+          "state": 2,
+          "step": null,
+          "stability": 2.3065,
+          "difficulty": 2.111214235785395,
+          "due": "2026-02-03T20:34:00+00:00",
+          "last_review": "2026-02-01T20:34:00+00:00"
+        },
+        "points": 4,
+        "attempts": 2,
+        "correct": 2,
+        "wrong": 0,
+        "prompt_count": 1,
+        "last_prompted_at": "2026-02-01T20:31:00+00:00",
+        "last_reviewed_at": "2026-02-01T20:34:00+00:00",
+        "review_count": 2,
+        "reviews": [
+          {
+            "card_id": 1003,
+            "rating": 3,
+            "review_datetime": "2026-02-01T20:31:00+00:00",
+            "review_duration": 1900,
+            "target_key": "s1_f03",
+            "detected_midi_note": 67,
+            "detected_note_name": "G4"
+          },
+          {
+            "card_id": 1003,
+            "rating": 3,
+            "review_datetime": "2026-02-01T20:34:00+00:00",
+            "review_duration": 1400,
+            "target_key": "s1_f03",
+            "detected_midi_note": 68,
+            "detected_note_name": "G#4"
+          }
+        ]
+      },
+      "s1_f04": {
+        "card": {
+          "card_id": 1004,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s1_f05": {
+        "card": {
+          "card_id": 1005,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s1_f06": {
+        "card": {
+          "card_id": 1006,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s1_f07": {
+        "card": {
+          "card_id": 1007,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s1_f08": {
+        "card": {
+          "card_id": 1008,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s1_f09": {
+        "card": {
+          "card_id": 1009,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s1_f10": {
+        "card": {
+          "card_id": 1010,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s1_f11": {
+        "card": {
+          "card_id": 1011,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      },
+      "s1_f12": {
+        "card": {
+          "card_id": 1012,
+          "state": 1,
+          "step": 0,
+          "stability": null,
+          "difficulty": null,
+          "due": "NEW_CARD_DUE",
+          "last_review": null
+        },
+        "points": 0,
+        "attempts": 0,
+        "correct": 0,
+        "wrong": 0,
+        "prompt_count": 0,
+        "last_prompted_at": null,
+        "last_reviewed_at": null,
+        "review_count": 0,
+        "reviews": []
+      }
+    },
+    "queue": {
+      "learning_due": [
+        "s6_f00",
+        "s5_f02",
+        "s3_f07",
+        "s2_f09"
+      ],
+      "review_due": [
+        "s1_f03"
+      ],
+      "new": [
+        "s1_f00",
+        "s1_f01",
+        "s1_f02",
+        "s1_f04",
+        "s1_f05",
+        "s1_f06",
+        "s1_f07",
+        "s1_f08",
+        "s1_f09",
+        "s1_f10",
+        "s1_f11",
+        "s1_f12",
+        "s2_f00",
+        "s2_f01",
+        "s2_f02",
+        "s2_f03",
+        "s2_f04",
+        "s2_f05",
+        "s2_f06",
+        "s2_f07",
+        "s2_f08",
+        "s2_f10",
+        "s2_f11",
+        "s2_f12",
+        "s3_f00",
+        "s3_f01",
+        "s3_f02",
+        "s3_f03",
+        "s3_f04",
+        "s3_f05",
+        "s3_f06",
+        "s3_f08",
+        "s3_f09",
+        "s3_f10",
+        "s3_f11",
+        "s3_f12",
+        "s4_f00",
+        "s4_f01",
+        "s4_f02",
+        "s4_f03",
+        "s4_f04",
+        "s4_f06",
+        "s4_f07",
+        "s4_f08",
+        "s4_f09",
+        "s4_f10",
+        "s4_f11",
+        "s4_f12",
+        "s5_f00",
+        "s5_f01",
+        "s5_f03",
+        "s5_f04",
+        "s5_f05",
+        "s5_f06",
+        "s5_f07",
+        "s5_f08",
+        "s5_f09",
+        "s5_f10",
+        "s5_f11",
+        "s5_f12",
+        "s6_f02",
+        "s6_f03",
+        "s6_f04",
+        "s6_f05",
+        "s6_f06",
+        "s6_f07",
+        "s6_f08",
+        "s6_f09",
+        "s6_f10",
+        "s6_f11",
+        "s6_f12"
+      ],
+      "future": [
+        "s6_f01",
+        "s4_f05"
+      ],
+      "stats": {
+        "learning_due": 4,
+        "review_due": 1,
+        "new_available": 3,
+        "new_total": 71,
+        "future": 2,
+        "available": 8
+      }
+    },
+    "selection": {
+      "allowance": 3,
+      "recent_keys": [
+        "s6_f01",
+        "s1_f03",
+        "s2_f09",
+        "s3_f07",
+        "s4_f05",
+        "s5_f02"
+      ],
+      "with_recent_keys": "s6_f00",
+      "without_recent_keys": "s6_f00",
+      "probes": [
+        {
+          "name": "window_8_no_recent",
+          "recent_keys": [],
+          "random_window": 8,
+          "expected_key": "s6_f00"
+        },
+        {
+          "name": "window_8_last_six_recent",
+          "recent_keys": [
+            "s6_f01",
+            "s1_f03",
+            "s2_f09",
+            "s3_f07",
+            "s4_f05",
+            "s5_f02"
+          ],
+          "random_window": 8,
+          "expected_key": "s6_f00"
+        },
+        {
+          "name": "leading_two_recent",
+          "recent_keys": [
+            "s6_f00",
+            "s5_f02"
+          ],
+          "random_window": 8,
+          "expected_key": "s3_f07"
+        },
+        {
+          "name": "all_pool_recent",
+          "recent_keys": [
+            "s6_f00",
+            "s5_f02",
+            "s3_f07",
+            "s2_f09"
+          ],
+          "random_window": 8,
+          "expected_key": "s6_f00"
+        },
+        {
+          "name": "window_one",
+          "recent_keys": [],
+          "random_window": 1,
+          "expected_key": "s6_f00"
+        },
+        {
+          "name": "single_candidate",
+          "recent_keys": [],
+          "random_window": 8,
+          "expected_key": "s6_f00"
+        }
+      ]
+    },
+    "next_due": {
+      "key": "s6_f00",
+      "due": "2026-02-01T20:25:00+00:00"
+    }
+  }
+}

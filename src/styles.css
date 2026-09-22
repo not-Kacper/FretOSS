@@ -1,0 +1,245 @@
+/* styles.css — dark "terminal" skin mirroring TerminalDisplay's ANSI palette. */
+
+:root {
+  --bg: #0b0f14;
+  --panel: #111822;
+  --rule: #1f2b3a;
+  --fg: #d7e2ee;
+  --dim: #6b7d92;
+  --green: #3ddc84;
+  --yellow: #f5c542;
+  --red: #ff5f56;
+  --blue: #4aa3ff;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--mono);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 20px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+h1 {
+  font-size: 20px;
+  margin: 0 0 6px;
+  letter-spacing: 0.02em;
+}
+
+.rule {
+  border-top: 1px solid var(--rule);
+  margin: 4px 0;
+}
+
+.label {
+  color: var(--dim);
+}
+
+.dim {
+  color: var(--dim);
+}
+
+.small {
+  font-size: 12.5px;
+}
+
+.mono {
+  font-variant-numeric: tabular-nums;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.app-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.header-row.controls {
+  margin-top: 4px;
+}
+
+.device-name {
+  color: #fff;
+}
+
+button {
+  font-family: inherit;
+  font-size: 13.5px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--rule);
+  background: var(--panel);
+  color: var(--fg);
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  border-color: var(--blue);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button.primary {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+button.danger {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+select {
+  font-family: inherit;
+  font-size: 13px;
+  background: var(--panel);
+  color: var(--fg);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 6px 8px;
+  max-width: 320px;
+}
+
+.device-picker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.target {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.target-note {
+  color: var(--yellow);
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.target-string {
+  color: #fff;
+}
+
+.queue-stats {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.session-count {
+  margin-left: auto;
+}
+
+.meter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.meter-bar {
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.block.low {
+  color: var(--green);
+}
+
+.block.mid {
+  color: var(--yellow);
+}
+
+.block.high {
+  color: var(--red);
+}
+
+.block.empty {
+  color: #2a3646;
+}
+
+.note-display {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 54px;
+}
+
+.note-display.waiting {
+  justify-content: center;
+}
+
+.note-name {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.note-name.match {
+  color: var(--green);
+}
+
+.note-name.miss {
+  color: var(--red);
+}
+
+.status {
+  min-height: 44px;
+}
+
+.status.ok,
+.ok {
+  color: var(--green);
+}
+
+.status.warn,
+.warn {
+  color: var(--yellow);
+}
+
+.status.error,
+.error {
+  color: var(--red);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--rule);
+  padding-top: 10px;
+}
