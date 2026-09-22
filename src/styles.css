@@ -373,83 +373,30 @@ input[type='range'] {
   opacity: 0.4;
 }
 
-.note-dot {
-  transform-box: fill-box;
-  transform-origin: center;
+.fretboard-stage {
+  position: relative;
 }
 
-.note-dot-core {
-  fill: var(--dot-new);
-  filter: drop-shadow(0 0 6px var(--dot-new-glow));
-  transition: fill 350ms ease, filter 350ms ease;
+.fretboard-dots {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.note-dot {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 }
 
 .note-dot-label {
-  fill: var(--dot-label);
+  color: var(--dot-label);
   font-size: 8px;
   font-family: var(--mono);
   pointer-events: none;
-}
-
-.note-dot.state-learning .note-dot-core {
-  fill: var(--dot-learning);
-  filter: drop-shadow(0 0 6px var(--dot-learning-glow));
-}
-
-.note-dot.state-review-due .note-dot-core {
-  fill: var(--dot-review-due);
-  filter: drop-shadow(0 0 6px var(--dot-review-due-glow));
-}
-
-.note-dot.state-review-future .note-dot-core {
-  fill: var(--dot-review-future);
-  filter: none;
-}
-
-.breathing-ring {
-  fill: none;
-  stroke: var(--dot-new);
-  stroke-width: 2;
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: breathe 1.6s ease-in-out infinite;
-  pointer-events: none;
-}
-
-.note-dot.flash-correct .note-dot-core {
-  fill: var(--dot-review-due);
-  filter: drop-shadow(0 0 8px var(--dot-review-due-glow));
-  transition: fill 350ms ease, filter 350ms ease;
-}
-
-.note-dot.flash-correct .breathing-ring {
-  animation: none;
-  opacity: 0;
-  transition: opacity 350ms ease;
-}
-
-.note-dot.flash-wrong .note-dot-core {
-  fill: var(--dot-learning);
-  filter: drop-shadow(0 0 8px var(--dot-learning-glow));
-  transition: fill 250ms ease, filter 250ms ease;
-}
-
-.note-dot.flash-wrong .breathing-ring {
-  animation: none;
-  stroke: var(--dot-learning);
-  transition: stroke 250ms ease;
-}
-
-@keyframes breathe {
-  0%,
-  100% {
-    opacity: 0.35;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.35);
-  }
+  line-height: 1;
 }
 
 /* --- settings modal ----------------------------------------------------- */

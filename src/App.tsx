@@ -1,8 +1,8 @@
 /**
  * App.tsx — the single view, wiring the hooks together.
  *
- * Phase 2 adds the SVG fretboard (visual centrepiece), a settings modal, and
- * a theme toggle. Still one screen and no router.
+ * SVG fretboard (visual centrepiece), settings modal, theme toggle.
+ * Still one screen and no router.
  */
 
 import { useCallback, useMemo, useRef, useState, useSyncExternalStore } from 'react';
@@ -123,7 +123,7 @@ export function App() {
       <header className="app-header">
         <div className="title-row">
           <h1>
-            <span aria-hidden="true">🎸</span> SRS Fretboard Learner
+            <span aria-hidden="true">🎸</span> FretOSS
           </h1>
           <div className="header-actions">
             <button type="button" onClick={toggleTheme} aria-label="Toggle theme">
@@ -166,10 +166,11 @@ export function App() {
         minFret={minFret}
         maxFret={maxFret}
         activeStrings={activeStrings}
-        targets={viewTargets}
+        targets={queueTargets}
         currentTarget={session.target}
         dotKinds={session.dotKinds}
         feedback={session.targetFeedback}
+        showNoteNames={settings.showNoteNames}
       />
 
       <TargetPrompt target={session.target} />

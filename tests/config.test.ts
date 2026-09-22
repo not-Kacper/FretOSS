@@ -17,6 +17,7 @@ import {
   midiToFreq,
   midiToName,
   rmsToDb,
+  semitoneInterval,
 } from '../src/audio/note-helpers';
 import { parseConfig, type RawConfig } from '../src/config/config';
 import { ratingForCorrectAnswer, createScheduler } from '../src/srs/scheduler';
@@ -171,6 +172,12 @@ describe('note helpers', () => {
     const sine = new Float32Array(1000);
     for (let i = 0; i < sine.length; i++) sine[i] = amp * Math.sin(i / 5);
     expect(rmsToDb(sine)).toBeCloseTo(20 * Math.log10(amp / Math.SQRT2), 1);
+  });
+
+  it('semitoneInterval is instrument-agnostic MIDI math', () => {
+    expect(semitoneInterval(40, 45)).toBe(5);
+    expect(semitoneInterval(64, 64)).toBe(0);
+    expect(semitoneInterval(67, 60)).toBe(-7);
   });
 
   it('formatWait matches Python `_format_wait`', () => {

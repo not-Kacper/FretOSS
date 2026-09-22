@@ -28,6 +28,8 @@ export interface UserSettings {
   activeStringsByDeck: Record<string, number[]>;
   /** Input gain, 0–3, default 1. Applied before pitch detection. */
   inputGain: number;
+  /** Beginner/debug: label dots with pitch class. Default off so practice stays recall. */
+  showNoteNames: boolean;
 }
 
 export function detectSystemTheme(): ThemeName {
@@ -73,6 +75,7 @@ function defaultSettings(): UserSettings {
     fretRangeMode: 'default',
     activeStringsByDeck: {},
     inputGain: 1,
+    showNoteNames: false,
   };
 }
 
@@ -116,6 +119,7 @@ export function parseSettings(raw: unknown): UserSettings {
     fretRangeMode,
     activeStringsByDeck,
     inputGain: clampGain(Number(value.inputGain ?? 1)),
+    showNoteNames: value.showNoteNames === true,
   };
 }
 

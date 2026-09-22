@@ -1,7 +1,7 @@
 import { renderToStaticMarkup } from 'react-dom/server';
 import { describe, expect, it } from 'vitest';
 
-import { Fretboard } from '../src/components/Fretboard';
+import { Fretboard, resolveDotVariant } from '../src/components/Fretboard';
 import { buildTargets } from '../src/deck/deck';
 import { getTuning } from '../src/deck/tuning';
 
@@ -38,43 +38,89 @@ describe('Fretboard SVG', () => {
     expect(html.match(/fb-string /g)?.length).toBe(6);
   });
 
-  it('dims inactive strings and omits their dots from the practice set', () => {
+  it('omits dots on inactive strings; count matches the filtered target list', () => {
     const targets = buildTargets(getTuning('guitar6-standard'), { minFret: 0, maxFret: 2 });
+    const active = [1];
+    const filtered = targets.filter((target) => active.includes(target.stringNumber));
     const html = renderToStaticMarkup(
       <Fretboard
         stringCount={6}
         maxFret={2}
-        activeStrings={[1]}
-        targets={targets}
+        activeStrings={active}
+        targets={filtered}
         currentTarget={null}
         dotKinds={{}}
       />,
     );
     expect(html).toContain('is-inactive');
     expect(html).toContain('is-active');
-    const dots = html.match(/note-dot /g) ?? [];
-    // Only string 1 across frets 0–2.
+    const dots = html.match(/note-dot/g) ?? [];
+    expect(dots.length).toBe(filtered.length);
     expect(dots.length).toBe(3);
   });
 
-  it('uses CSS classes for FSRS colours and the breathing current target (no inline hex)', () => {
+  it('hides note names by default and labels every dot when the toggle is on', () => {
     const targets = buildTargets(getTuning('guitar6-standard'), { minFret: 0, maxFret: 0, strings: [6] });
-    const html = renderToStaticMarkup(
+    const unlabeled = renderToStaticMarkup(
       <Fretboard
         stringCount={6}
         maxFret={0}
         activeStrings={[6]}
         targets={targets}
         currentTarget={targets[0]}
-        dotKinds={{ [targets[0].key]: 'learning' }}
-        feedback="correct"
+        dotKinds={{ [targets[0].key]: 'new' }}
       />,
     );
-    expect(html).toContain('state-learning');
-    expect(html).toContain('is-current');
-    expect(html).toContain('flash-correct');
-    expect(html).toContain('breathing-ring');
-    expect(html).not.toContain('#4d94ff');
-    expect(html).not.toContain('#ff6b6b');
+    expect(unlabeled).not.toContain('note-dot-label');
+    expect(unlabeled).not.toContain(`>${targets[0].pitchClass}<`);
+
+    const labeled = renderToStaticMarkup(
+      <Fretboard
+        stringCount={6}
+        maxFret={0}
+        activeStrings={[6]}
+        targets={targets}
+        currentTarget={targets[0]}
+        dotKinds={{ [targets[0].key]: 'new' }}
+        showNoteNames
+      />,
+    );
+    expect(labeled).toContain('note-dot-label');
+    expect(labeled).toContain(targets[0].pitchClass);
+  });
+
+  it('applies wrong/correct overlay only to the current target, never by MIDI match', () => {
+    const all = buildTargets(getTuning('guitar6-standard'), { minFret: 7, maxFret: 7, strings: [4, 5] });
+    const d7 = all.find((target) => target.stringNumber === 4)!; // A3
+    const a7 = all.find((target) => target.stringNumber === 5)!; // E3 — same fret, different string
+    expect(d7.pitchClass).not.toBe(a7.pitchClass);
+
+    const html = renderToStaticMarkup(
+      <Fretboard
+        stringCount={6}
+        maxFret={12}
+        activeStrings={[4, 5]}
+        targets={[d7, a7]}
+        currentTarget={d7}
+        dotKinds={{ [d7.key]: 'review-due', [a7.key]: 'learning' }}
+        feedback="wrong"
+      />,
+    );
+
+    expect(html).toContain(`data-target-key="${d7.key}"`);
+    expect(html).toContain(`data-target-key="${a7.key}"`);
+    const d7Tag = html.match(new RegExp(`<div[^>]*data-target-key="${d7.key}"[^>]*>`))?.[0] ?? '';
+    const a7Tag = html.match(new RegExp(`<div[^>]*data-target-key="${a7.key}"[^>]*>`))?.[0] ?? '';
+    expect(d7Tag).toContain('data-variant="wrong"');
+    expect(a7Tag).not.toContain('data-variant="wrong"');
+    expect(html).not.toContain('breathing-ring');
+  });
+
+  it('resolveDotVariant never uses detected MIDI — only FSRS state + current target', () => {
+    expect(resolveDotVariant('learning', false, 'wrong')).toBe('learning');
+    expect(resolveDotVariant('learning', true, 'wrong')).toBe('wrong');
+    expect(resolveDotVariant('review-due', true, 'correct')).toBe('correct');
+    expect(resolveDotVariant('new', true, 'idle')).toBe('target');
+    expect(resolveDotVariant('review-future', false, 'correct')).toBe('future');
   });
 });

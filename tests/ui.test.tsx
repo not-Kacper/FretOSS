@@ -174,7 +174,7 @@ describe('TerminalDisplay parity', () => {
 
   it('renders the single App view without a browser (config still loading)', () => {
     const html = renderToStaticMarkup(<App />);
-    expect(html).toContain('SRS Fretboard Learner');
+    expect(html).toContain('FretOSS');
     expect(html).toContain('Device:');
     expect(html).toContain('Start listening');
     expect(html).toContain('Input:');

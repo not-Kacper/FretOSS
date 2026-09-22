@@ -1,4 +1,8 @@
-# SRS Fretboard Learner (TypeScript / web port)
+# FretOSS
+
+Client-side fretboard trainer (TypeScript / web port of the original
+Python “SRS Fretboard Learner”). The GitHub repository may still be named
+`srs-fretboard`; renaming it is a separate manual step.
 
 A real-time guitar note trainer with FSRS spaced repetition, ported from the
 single-file Python app (`main.py`) to a **client-side web app**.

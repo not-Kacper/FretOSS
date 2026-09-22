@@ -1,9 +1,9 @@
 {
-  "name": "srs-fretboard",
+  "name": "fretoss",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Client-side SRS fretboard trainer: AudioWorklet YIN pitch detection + ts-fsrs scheduling, with optional Cloudflare D1 progress sync.",
+  "description": "FretOSS — client-side fretboard trainer: AudioWorklet YIN pitch detection + ts-fsrs scheduling, with optional Cloudflare D1 progress sync.",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
@@ -17,6 +17,7 @@
     "db:migrate:remote": "wrangler d1 execute fretboard_progress --remote --file=./migrations/0001_init.sql && wrangler d1 execute fretboard_progress --remote --file=./migrations/0002_composite_key.sql"
   },
   "dependencies": {
+    "framer-motion": "^13.4.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "ts-fsrs": "^5.4.2"

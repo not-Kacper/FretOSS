@@ -206,6 +206,15 @@ export function SettingsPanel({ open, settings, onChange, onClose, onImported }:
               <option value="light">Light</option>
             </select>
           </label>
+          <label className="settings-row">
+            <span>Show note names on fretboard</span>
+            <input
+              type="checkbox"
+              checked={settings.showNoteNames}
+              onChange={(event) => patch({ showNoteNames: event.target.checked })}
+            />
+          </label>
+          <p className="dim small">Off by default — labeled dots turn practice into a chart.</p>
         </section>
 
         <section className="settings-section">
