@@ -232,13 +232,21 @@ describe('audio engine', () => {
     }
   });
 
-  it('routes source -> worklet -> gain(0) -> destination (analysed, never played)', async () => {
-    const handle = await startAudioEngine({ config });
+  it('routes source -> inputGain -> worklet -> gain(0) -> destination (analysed, never played)', async () => {
+    const handle = await startAudioEngine({ config, inputGain: 1.5 });
     expect(env.recorded.connections).toEqual([
-      'source->FakeWorkletNode',
+      'source->FakeGain',
+      'gain->FakeWorkletNode',
       'worklet->FakeGain',
       'gain->destination',
     ]);
+    expect(handle.getInputGain()).toBe(1.5);
+    handle.setInputGain(2.5);
+    expect(handle.getInputGain()).toBe(2.5);
+    handle.setInputGain(9);
+    expect(handle.getInputGain()).toBe(3);
+    handle.setInputGain(-1);
+    expect(handle.getInputGain()).toBe(0);
 
     // The only path to the speakers is muted; a silent gain of 0 is what keeps
     // the analysis graph alive without producing any output.

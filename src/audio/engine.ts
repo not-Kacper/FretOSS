@@ -53,6 +53,9 @@ export interface EngineHandle {
   deviceLabel: string;
   /** Ready/rejected data from the processor (useful for diagnostics). */
   processorParams: { bufferSize: number; tolerance: number; sampleRate: number } | null;
+  /** Live input gain (0–3), applied BEFORE pitch detection. */
+  setInputGain: (gain: number) => void;
+  getInputGain: () => number;
   close: () => Promise<void>;
 }
 
@@ -145,8 +148,15 @@ export interface StartEngineOptions {
   config: ConfigManager;
   /** `deviceId` of the input to open; null/undefined = system default. */
   deviceId?: string | null;
+  /** Linear gain applied between MediaStreamSource and the worklet (default 1). */
+  inputGain?: number;
   /** Overrides `config.pitch_detection.silence_threshold…` for the worklet gate. */
   extraProcessorOptions?: Record<string, unknown>;
+}
+
+export function clampInputGain(value: number): number {
+  if (!Number.isFinite(value)) return 1;
+  return Math.min(3, Math.max(0, value));
 }
 
 /**
@@ -200,7 +210,13 @@ export async function startAudioEngine(options: StartEngineOptions): Promise<Eng
   });
 
   const source = context.createMediaStreamSource(stream);
-  source.connect(node);
+
+  // User-controlled gain, applied BEFORE pitch detection so the volume meter
+  // and confidence gates still see a consistent post-gain signal.
+  const inputGain = context.createGain();
+  inputGain.gain.value = clampInputGain(options.inputGain ?? 1);
+  source.connect(inputGain);
+  inputGain.connect(node);
 
   // Silent sink: keeps the graph pulled without ever producing sound.
   const silentSink = context.createGain();
@@ -218,6 +234,10 @@ export async function startAudioEngine(options: StartEngineOptions): Promise<Eng
     sampleRate: context.sampleRate,
     deviceLabel,
     processorParams: null,
+    setInputGain: (gain: number) => {
+      inputGain.gain.value = clampInputGain(gain);
+    },
+    getInputGain: () => inputGain.gain.value,
     close: async () => {
       try {
         node.port.postMessage('stop');
@@ -226,6 +246,7 @@ export async function startAudioEngine(options: StartEngineOptions): Promise<Eng
       }
       try {
         source.disconnect();
+        inputGain.disconnect();
         node.disconnect();
         silentSink.disconnect();
       } catch {

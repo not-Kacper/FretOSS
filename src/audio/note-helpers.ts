@@ -79,6 +79,14 @@ export function midiToFreq(midiNote: number): number {
 }
 
 /**
+ * Signed semitone distance between two MIDI notes. Instrument-agnostic — not
+ * a guitar fret count — so a future interval-hint ladder can reuse it.
+ */
+export function semitoneInterval(fromMidi: number, toMidi: number): number {
+  return Math.trunc(toMidi) - Math.trunc(fromMidi);
+}
+
+/**
  * main.py: `_format_wait(delta)` — "2h 5m" / "3m 20s" / "12s".
  * Python tracks milliseconds here because it deals with `timedelta`; the
  * formatting is identical.

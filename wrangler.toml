@@ -4,7 +4,7 @@
 # D1:      npx wrangler d1 create fretboard_progress   (then paste database_id below)
 #          npx wrangler d1 execute fretboard_progress --remote --file=./migrations/0001_init.sql
 
-name = "srs-fretboard"
+name = "fretoss"
 compatibility_date = "2025-01-01"
 
 [pages]

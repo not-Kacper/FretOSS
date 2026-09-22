@@ -169,12 +169,12 @@ describe('TerminalDisplay parity', () => {
     expect(ended).toContain(targetLabel);
     // Python's `_format_wait(next_card.due - _utc_now())`; the clock advances a
     // little between building the props and rendering, hence the tolerance.
-    expect(ended).toMatch(/\(1h 0m\)/);
+    expect(ended).toMatch(/\((1h 0m|59m \d+s)\)/);
   });
 
   it('renders the single App view without a browser (config still loading)', () => {
     const html = renderToStaticMarkup(<App />);
-    expect(html).toContain('SRS Fretboard Learner');
+    expect(html).toContain('FretOSS');
     expect(html).toContain('Device:');
     expect(html).toContain('Start listening');
     expect(html).toContain('Input:');
